@@ -75,6 +75,8 @@ We'll start with a brief intro lecture covering the background for leveraging th
 11. Run visualizations using yFiles to examine the [2021 South London Papa Johns tax evasion case](https://www.newsshopper.co.uk/news/19164815.boss-bromley-catford-papa-johns-stores-jailed/)
 12. Q&A discussion.
 
+Tutorial: </PART1.md>
+
 ### Links to the components
 
   * <https://github.com/senzing-garage/sz-semantics>
@@ -110,6 +112,8 @@ We'll start with a brief intro lecture covering why ["unbundling the graph in Gr
   10. Implement a question/answer chat bot based on GraphRAG using DSPy and Ollama, running the `gemma3:12b` LLM locally.
   11. Q&A discussion.
 
+Tutorial: </PART2.md>
+
 ### Links to the components
 
   * <https://senzing.com/what-is-entity-resolution/>
@@ -136,6 +140,8 @@ We'll start with a brief intro lecture about the "Azerbaijani Laundromat" incide
   3. Run the `aml_transact.ipynb` notebook in this masterclass repo to show how synthetic data for wire transfer transactions can simulate patterns of criminal tradecraft among money laundering networks represented in a graph.
   4. Resources for how data practitioners can get involved: learn more, human trafficking certification, support whistleblowers, etc.
   5. Q&A discussion.
+
+Tutorial: </PART3.md>
 
 ### Links to the components
 
