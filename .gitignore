@@ -1,5 +1,7 @@
 # local
 *~
+export.json
+thesaurus.ttl
 aml.html
 
 # Byte-compiled / optimized / DLL files

@@ -1,321 +1,164 @@
-# Knowledge Graph Workshop
+# Create High-Quality Knowledge Graphs
 
-## Creating high-quality knowledge graphs using Kuzu and Senzing
+**Connected Data London 2025 Masterclass:**  
+_Combining Data from Structured and Unstructured Sources to create High-Quality Knowledge Graphs_
 
-This repo contains the code for a joint workshop between Kuzu and
-Senzing at at graph conferences in 2025.
+Thu Nov 20, 2025  
+09:30-11:30 GMT  
+<https://2025.connected-data.london/talks/combining-data-from-structured-and-unstructured-sources-to-create-high-quality-knowledge-graphs/>
 
-The focus is to show how to create high-quality knowledge graphs from
-heterogeneous data sources using Kuzu -- which is an embedded, open
-source _graph database_ -- and Senzing -- which is an SDK for _entity
-resolution_.
+  * **Paco Nathan** and **Gurpinder Dhillon** @ [Senzing.com](https://senzing.com/)
 
-### Slides
+### Overview
 
-To follow along, download the slides from the following links:
+Integrating structured and unstructured data sources into high-quality knowledge graphs is an incredibly common need in production use cases. Downstream, there may be many patterns of usage for the KG such as graph analytics, dashboards, GraphRAG, question/answer chat bots, agents, and so on. 
 
-- Kuzu: [slides](https://docs.google.com/presentation/d/1tErhnbwkjSxREbfpxKdhSOXMwm9ReLKAYxm7_vl6J4U/view?usp=sharing)
-- Senzing: [slides](https://drive.google.com/file/d/1EL0TnzWDsNqKE53mPOwXc9UfImkgHH2q/view?usp=sharing)
+Through this masterclass, we will leverage insights from the tutorial steps described below to identify patterns of tradecraft within a graph, as a fraud analyst team at a bank would typically do.
 
+Overall, we will show how the use of available datasets with contemporary [_entity resolution_](https://senzing.com/entity-resolution-generative-ai/) enhances AI applications for more trusted outcomes, streamlined governance, better customer experiences, and accelerated innovation.
 
-## Background
+A tutorial in three parts:
 
-The workshop will demonstrate an _investigative graph_ analysis based
-on patterns of bad-actor tradecraft. By connecting "risk" data and
-"link" data within a graph, we can show patterns of tradecraft such as
-money laundering, tax evasion, money mules, and so on. We'll use
-"slices" of datasets from the following open data providers:
+  1. **Part 1**: Visualize fraud networks, using Senzing, RyuGraph, OpenSanctions, Open Ownership
+  2. **Part 2**: Blending structured and unstructured data in KGs to power context engineering based on Senzing, DSPy, LanceDB
+  3. **Part 3**: How to become a money launderer
 
-  - <https://www.opensanctions.org/>
-  - <https://www.openownership.org/>
+Note that due to sudden unforeseen changes in Kuzu, we've had to adjust the content of this course, and one of the original co-authors, **Prashanth Rao**, will not be able to join. Now we'll use RyuGraph in place of Kuzu -- and also making lots of use of NetworkX, which can be scaled and accelerated using cuGraph.
 
-### OpenSanctions
+We will also include additional content about using LanceDB and DSPy for context engineering, plus a section on how to become a money launderer -- leveraging graph analytics to examine the leaked OCCRP data for the "Azerbaijani Laundromat" case.
 
-[OpenSanctions](https://www.opensanctions.org/) provides the "risk" category of data.
-In other words, this describes people and organizations who are known risks for FinCrime.
-There is also the [`yente`](https://github.com/opensanctions/yente) API which provides
-HTTP endpoints based on the [_FollowTheMoney_](https://followthemoney.tech/) data model
-used for investigations and OSInt.
+### Course Goals
 
-### Open Ownership
+Gain hands-on experience with tools in Python using high-quality knowledge graphs with entity resolution, graph algorithms, and interactive visualization, plus context engineering to augment the graph and enhance downstream AI applications.
 
-[Open Ownership](https://www.openownership.org/) provides the "link" category of data.
-This describes [_ultimate beneficial ownership_](https://en.wikipedia.org/wiki/Beneficial_ownership)
-(UBO) details: "Who owns how much of what, and who actually has controlling interest?"
-There's also the [_Beneficial Ownership Data Standard_](https://standard.openownership.org/en/0.4.0/)
-(BODS) which is an open standard providing guidance for collecting, sharing, and using
-high-quality beneficial ownership data, to support corporate ownership transparency.
+### Target Audience
 
-Recently, Open Ownership has partnered with [GLEIF](https://www.gleif.org/) to launch
-the [_Global Open Data Integration Network_](https://godin.gleif.org) (GODIN)
-to promote open standards across the world for data interoperability among these
-kinds of datasets related to investigating transnational corruption.
+  * Data Scientists, Machine Learning Engineers
+  * Data Engineers, MLOps
+  * Financial Fraud Analysts
+  * Team leads and managers for the roles above
 
-There is also a repository with these datasets which are already formatted for
-use in Senzing <https://www.opensanctions.org/docs/bulk/senzing/> although these
-full sources are quite large to download.
+### Prerequisites
 
+  * Level: Beginner - Intermediate
+  * Some experience coding in Python
+  * Familiarity with popular packages such as Jupyter and Docker
 
-## Datasets
-
-For the purposes of this tutorial, we've selected "slices" of data
-from OpenSanctions and Open Ownership which connect to produce
-interesting subgraphs that illustrate patterns of bad-actor
-tradecraft.
-
-Download these datasets from the following links:
+**Important:** You must have both [Docker](https://docs.docker.com/get-docker/) 
+and [Python 3.13+](https://www.python.org/downloads/release/python-3139/) downloaded and installed to run this tutorial.
+Before going to the conference, you need to have downloaded two containers onto your laptop:
 
 ```bash
-wget https://raw.githubusercontent.com/DerwenAI/senzing_starter_kit/refs/heads/main/senzing_rootfs/data/open-sanctions.json -O data/open-sanctions.json
-wget https://raw.githubusercontent.com/DerwenAI/senzing_starter_kit/refs/heads/main/senzing_rootfs/data/open-ownership.json -O data/open-ownership.json
+docker pull senzing/serve-grpc:latest
+docker pull ryugraphdb/explorer:latest
 ```
 
-This will create two files in the `data` subdirectory:
+---
 
-- `open-sanctions.json`
-- `open-ownership.json`
+## Part 1: Visualize Fraud Networks
 
-Take a look at these JSON files to get an idea of their contents.
-
-If ever needed as a fallback strategy, the results exported from
-Senzing for this use case in are available for download at
-[`export.json`](https://storage.googleapis.com/erkg/starterkit/export.json)
-
-
-## Tools
-
-We will be using Kuzu as the _graph database_ and Senzing as the
-_entity resolution_ engine. Docker is used to run both the Senzing
-SDK and Kuzu Explorer, a web-based UI for Kuzu. Visit the websites to
-see further instructions for each tool:
-
- - [Docker](https://docs.docker.com/desktop/)
- - [Kuzu](https://kuzudb.com/)
- - [Senzing](https://senzing.com/) 
-
-**Important:** You will need to have Docker downloaded and installed
-on your laptop to run this tutorial.  Then we will run the Senzing SDK
-within a Docker container and load Kuzu as a Python package.
-
-
-## Setup
-
-Set up a local Python environment in order to run the workshop steps.
-
-### Option 1: `uv` (recommended)
-
-Use [these instructions](https://docs.astral.sh/uv/getting-started/installation/) to install `uv` for your OS.
-
-Next clone the GitHub repo to your laptop:
-
-```bash
-git clone https://github.com/kuzudb/kgc-2025-workshop-high-quality-graphs.git
-cd kgc-2025-workshop-high-quality-graphs
-```
-
-Then use `uv` to install the Python library dependencies:
-
-```bash
-uv sync
-```
-
-Or use `uv` to install based on the `requirements.txt` file:
-
-```bash
-uv pip install -r requirements.txt
-```
-
-### Option 2: `pip` (fallback)
-
-If you don't want to use `uv`, you can use `pip` to install the dependencies through
-the `requirements.txt` file:
-
-```bash
-pip install -r requirements.txt
-```
-
-
-## Running the Senzing container
-
-To run the entity resolution pipeline, we will launch Senzing in
-Docker, with the data directory mounted as an external volume, then
-connect into the container in a shell prompt:
-
-```bash
-docker run -it --rm --volume ./data:/tmp/data senzing/demo-senzing
-```
-
-This uses <https://github.com/Senzing/senzingapi-tools> for a base
-layer in Docker. This includes a set of Python utilties which source
-from the <https://github.com/senzing-garage/> public repo on
-GitHub. These are located in the `/opt/senzing/g2/python` directory
-within the container.
-
-First among these, we'll run the Senzing configuration tool to create
-a namespace for the data sources which we'll load later:
-
-```bash
-G2ConfigTool.py
-```
-
-When you get a `(g2cfg)` prompt, register the two data sources which you downloaded above.
-In other words, each dataset has a column with an identifier -- either `"OPEN-SANCTIONS"`
-or `"OPEN-OWNERSHIP"` -- naming its source:
-
-```
-addDataSource OPEN-SANCTIONS
-addDataSource OPEN-OWNERSHIP
-save
-```
-
-When this tool prompts with `save changes? (y/n)` reply with `y` and
-hit enter, then `exit` to get back to the shell prompt.
-
-Now we load the two datasets, which are mounted from your laptop file
-system:
-
-```bash
-G2Loader.py -f /tmp/data/open-sanctions.json
-G2Loader.py -f /tmp/data/open-ownership.json
-```
-
-Senzing runs _entity resolution_ as records are loaded.
-Then we can export the _entity resolution_ results as a JSON file:
-
-```bash
-G2Export.py -F JSON -o /tmp/data/export.json
-```
-
-Finally, exit the container to return to your laptop environment:
-
-```bash
-exit
-```
-
-
-## Running the workflow
-
-The workshop steps are implemented in the `create_graph.ipynb`
-notebook. A Python script version is also provided in the
-`create_graph.py` file if you want to run the workflow without the
-Jupyter notebook.
-
-The following files contain utility functions for the sequence of
-preprocessing steps required to create the graph:
-
- - `open_sanctions.py`: Handles processing of OpenSanctions data.
- - `open_ownership.py`: Handles processing of Open Ownership data.
- - `process_senzing.py`: Handles processing of the entity resolution export from Senzing.
-
-The steps to run the preprocessing, graph creation, and exploration
-steps are in the following files:
-
- - `create_graph.ipynb`: Runs the preprocessing steps, creates the graph, and performs some basic exploration and visualization.
- - `create_graph.py`: Contains the same functionality as the notebook above, though as a Python script.
-
-To launch the `create_graph.ipynb` notebook in JupyterLab, run the
-following commands from the root directory of this repo:
-
-```bash
-source .venv/bin/activate
-.venv/bin/jupyter-lab
-```
-
-Further visual exploration of the graph can be done using the Kuzu
-Explorer UI, whose steps are described below.
-
-
-## Graph visualization in Kuzu Explorer
-
-To visualize the graph in Kuzu using its browser-based UI, Kuzu
-Explorer, run the following commands from this root directory where
-the `docker-compose.yml` file is:
-
-```bash
-docker compose up
-```
-
-Alternatively, you can type in the following command in your terminal:
-
-```bash
-docker run -p 8000:8000 \
-           -v ./db:/database
-           -e MODE=READ_WRITE \
-           --rm kuzudb/explorer:latest
-```
-
-This will download and run the Kuzu Explorer image, and you can access
-the UI at <http://localhost:8000>
-
-Make sure that the path to the database directory is set to the name
-of the Kuzu database directory in the code!
-
-In the Explorer UI, enter the following Cypher query in the shell
-editor to visualize the graph:
-
-```cypher
-MATCH (a:Entity)-[b*1..3]->(c)
-RETURN *
-LIMIT 100
-```
-
-![](./assets/example-subgraph.png)
-
-
-## Optional: NetworkX
-
-The `create_graph.ipynb` notebook also contains an optional step to
-convert the Kuzu graph to a NetworkX graph.  We run a NetworkX graph
-algorithm called Betweenness Centrality to find the most important
-nodes in the graph.
-
-"Victor Nyland Poulsen" is the entity in the graph with the highest
-betweenness centrality.
-
-| id | descrip | betweenness_centrality |
-| --- | --- | --- |
-| sz_100036 | Victor Nyland Poulsen | 0.002753 |
-| sz_100225 | Daniel Symmons | 0.002251 |
-| sz_100003 | Kenneth Kurt Hansen | 0.001314 |
-| sz_100092 | Daniel Lee Symons | 0.001273 |
-| sz_100023 | Rudolf Esser | 0.001176 |
-
-![](./assets/betweenness-centrality.png)
-
-The visualization shown uses the circular layout in yFiles to
-represent a large number of relationships more compactly.  Check out
-the notebook and try more graph visualizations and algorithms to
-further analyze the data!
-
-
-## Money Laundering
-
-The [AML.md](AML.md) file enumerates heuristics used by fraud analysts
-for transaction monitoring and alerts. These consideration describe
-how to assess if a bank account has been used for money laundering. In
-other words, this is helpful info for anyone who's new to anti-money
-laundering (AML) or anyone thinking of becoming a money launderer.
-
-While it's possible to get open data describing companies, their
-ownership, and sanctions risks -- i.e., the "risk" and "link" data in
-an investigative graph -- it's difficult to obtain "event" data such
-as financial transactions. Generally this class of data is much too
-confidential; however, in some cases transactions for large-scale
-fraud have been leaked.
-
-[Howard Wilkinson](https://www.ft.com/content/32d47fd8-c18b-11e8-8d55-54197280d3f7)
-was the whistleblower regarding massive scale money laundering at
-the Estonia branch of Danske Bank, which included the
-[Azerbaijani Laundromat](https://www.occrp.org/en/project/the-azerbaijani-laundromat)
-case.
-
-Simulation methods defined in the `aml.py` Python module are
-based on analysis from known money laundering cases, such as
-what was discovered about Danske Bank.
-
-In this workflow we generate synthetic data to simulate money
-laundering. We use shell companies which were part of real-world fraud
-network, then generate simulated transactions based on statistical
-analysis of leaked bank data.
-
-  - `aml_transact.ipynb`: extract a fraud network, then generate transactions
+  * Duration: 55 minutes
+  * GitHub repository: <https://github.com/DerwenAI/cdl-2025-masterclass>
+
+We'll start with a brief intro lecture covering the background for leveraging these technologies together with open data in an anti-fraud use cases.
+
+1. Download the Docker containers for Senzing gRPC server and RyuGraph Explorer (during the brief intro lecture)
+2. Initialize the Python environment on your laptop using `uv` to load the library dependencies.
+3. Download slices of datasets from OpenSanctions and Open Ownership.
+4. Launch the Senzing container and run it in the background for a gRPC server.
+5. Run _entity resolution_ in Senzing to merge the datasets and generate graph "building blocks" in RDF, as a domain-specific thesaurus.
+6. Review the _metadata application profile_ (MAP) for the SKOS taxonomy used, how it integrates with [NIEM](https://niem.github.io/), [FollowTheMoney](https://followthemoney.tech/), [BODS](https://bods-data.openownership.org/), and so on.
+7. Use SPARQL queries in Maplib to transform the RDF into Polars dataframes.
+8. Also transform records from the datasets into Polars dataframes.
+9. Load tables into RyuGraph from the dataframes.
+10. Leverage graph algorithms in NetworkX: Louvain partitioning to identify subgraphs as potential fraud rings within the graph, and betweenness centrality to rank individuals of interest within each subgraph.
+11. Run visualizations using yFiles to examine the [2021 South London Papa Johns tax evasion case](https://www.newsshopper.co.uk/news/19164815.boss-bromley-catford-papa-johns-stores-jailed/)
+12. Q&A discussion.
+
+Tutorial: [PART1 instructions](PART1.md)
+
+### Links to the components
+
+  * <https://github.com/senzing-garage/sz-semantics>
+  * <https://github.com/senzing-garage/serve-grpc>
+  * <https://www.opensanctions.org/>
+  * <https://www.openownership.org/>
+  * <https://ryugraph.io/>
+  * <https://github.com/DataTreehouse/maplib>
+  * <https://pola.rs/>
+  * <https://networkx.org/>
+  * <https://github.com/yWorks/yfiles-jupyter-graphs>
+
+---
+
+## Part 2: Unbundling the Graph in GraphRAG
+
+  * Duration: 30 minutes
+  * GitHub repository: <https://github.com/DerwenAI/strwythura>
+
+Blending structured and unstructured data in KGs to power context engineering based on Senzing, DSPy, LanceDB.
+
+We'll start with a brief intro lecture covering why ["unbundling the graph in GraphRAG"](https://www.oreilly.com/radar/unbundling-the-graph-in-graphrag/) allows more effective curation of the semantics for the domain-specific context, and produces improved AI application workflows. Then we'll have a live demo and walk through the highlights of this implementation in the code.
+
+  1. Run _entity resolution_ in Senzing to merge the datasets and generate graph "building blocks" in RDF, as a domain-specific thesaurus.
+  2. Construct a "backbone" for a knowledge graph in NetworkX from the thesaurus.
+  3. Crawl the related documents, chunking text from the unstructured content and loading chunks plus their embeddings into LanceDB.
+  4. Parse the text in each chunk using GLiNER zero-shot NER in a spaCy pipeline, based on semantic definitions from the thesaurus.
+  5. Use a _textgraph_ algorithm to construct a lexical graph which links to the text chunks, plus ranking for the "most referenced" entities.
+  6. Curate semantics for optimizing the AI app outcomes within a specific domain.
+  7. Entity linking: promote entities extracted from the unstructured content into the KG, linked to ER results.
+  8. Build embeddings in GenSim for the entities, determining their nearest neighbors.
+  9. Leverages NetworkX for _semantic expansion_ and _semantic random walks_ to rerank text chunks in LanceDB.
+  10. Implement a question/answer chat bot based on GraphRAG using DSPy and Ollama, running the `gemma3:12b` LLM locally.
+  11. Q&A discussion.
+
+Tutorial: [PART2 instructions](PART2.md)
+
+### Links to the components
+
+  * <https://senzing.com/what-is-entity-resolution/>
+  * <https://lancedb.com/>
+  * <https://spacy.io/>
+  * <https://github.com/urchade/GLiNER>
+  * <https://networkx.org/>
+  * <https://radimrehurek.com/gensim/models/word2vec.html>
+  * <https://dspy.ai/>
+  * <https://ollama.com/>
+  * <https://huggingface.co/google/gemma-3-12b-it>
+
+---
+
+## Part 3: How to become a money launderer
+
+  * Duration: 20 minutes
+  * GitHub repository: <https://github.com/DerwenAI/cdl-2025-masterclass/>
+
+We'll start with a brief intro lecture about the "Azerbaijani Laundromat" incident (~$3B money laundering) with real-world examples of how graph technologies empower anti-fraud investigations.
+
+  1. Review the `AML.md` points summarizing excerpts from _The Dark Money Files_ by Graham Barrow and Ray Blake.
+  2. Run the `occrp.ipynb` notebook in the `kleptosyn` repo for forensic accounting, graph-based flow analysis, and visualization of the Azerbaijani Laundromat leaked data from OCCRP.
+  3. Run the `aml_transact.ipynb` notebook in this masterclass repo to show how synthetic data for wire transfer transactions can simulate patterns of criminal tradecraft among money laundering networks represented in a graph.
+  4. Resources for how data practitioners can get involved: learn more, human trafficking certification, support whistleblowers, etc.
+  5. Q&A discussion.
+
+Tutorial: [PART3 instructions](PART3.md)
+
+### Links to the components
+
+  * <https://www.thedarkmoneyfiles.com/>
+  * <https://youtu.be/Gtp7U0iq-2I?feature=shared>
+  * <https://github.com/DerwenAI/kleptosyn>
+  * <https://www.occrp.org/en/project/the-azerbaijani-laundromat/the-raw-data>
+
+---
+
+Kudos to 
+[@prrao87](https://github.com/prrao87),
+[@brianmacy](https://github.com/brianmacy),
+[@jbutcher21](https://github.com/jbutcher21),
+[@docktermj](https://github.com/docktermj),
+[@cj2001](https://github.com/cj2001),
+[@jesstalisman-ia](https://github.com/jesstalisman-ia),
+[@pudo](https://github.com/pudo),
+[@StephenAbbott](https://github.com/StephenAbbott),
+and the kind folks at [GraphGeeks](https://graphgeeks.org/) for their support.
