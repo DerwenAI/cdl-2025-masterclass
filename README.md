@@ -23,7 +23,7 @@ A tutorial in three parts:
   2. **Part 2**: Blending structured and unstructured data in KGs to power context engineering based on Senzing, DSPy, LanceDB
   3. **Part 3**: How to become a money launderer
 
-Note that due to sudden unforeseen changes in Kuzu, we've had to adjust the content of this course, and one of the original co-authors, **Prashanth Rao**, will not be able to join. Now we'll use RyuGraph in place of Kuzu.
+Note that due to sudden unforeseen changes in Kuzu, we've had to adjust the content of this course, and one of the original co-authors, **Prashanth Rao**, will not be able to join. Now we'll use RyuGraph in place of Kuzu -- and also making lots of use of NetworkX, which can be scaled and accelerated using cuGraph.
 
 We will also include additional content about using LanceDB and DSPy for context engineering, plus a section on how to become a money launderer -- leveraging graph analytics to examine the leaked OCCRP data for the "Azerbaijani Laundromat" case.
 
@@ -134,6 +134,8 @@ We'll start with a brief intro lecture about the "Azerbaijani Laundromat" incide
   1. Review the `AML.md` points summarizing excerpts from _The Dark Money Files_ by Graham Barrow and Ray Blake.
   2. Run the `occrp.ipynb` notebook in the `kleptosyn` repo for forensic accounting, graph-based flow analysis, and visualization of the Azerbaijani Laundromat leaked data from OCCRP.
   3. Run the `aml_transact.ipynb` notebook in this masterclass repo to show how synthetic data for wire transfer transactions can simulate patterns of criminal tradecraft among money laundering networks represented in a graph.
+  4. Resources for how data practitioners can get involved: learn more, human trafficking certification, support whistleblowers, etc.
+  5. Q&A discussion.
 
 ### Links to the components
 
