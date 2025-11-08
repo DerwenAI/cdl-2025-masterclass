@@ -8,6 +8,8 @@ Thu Nov 20, 2025
 <https://2025.connected-data.london/talks/combining-data-from-structured-and-unstructured-sources-to-create-high-quality-knowledge-graphs/>
 
   * **Paco Nathan** and **Gurpinder Dhillon** @ [Senzing.com](https://senzing.com/)
+  * slides: <https://drive.proton.me/urls/S7352D48GG#eGkDq6kWhLFs>
+
 
 ### Overview
 
@@ -19,8 +21,8 @@ Overall, we will show how the use of available datasets with contemporary [_enti
 
 A tutorial in three parts:
 
-  1. **Part 1**: Visualize fraud networks, using Senzing, RyuGraph, OpenSanctions, Open Ownership
-  2. **Part 2**: Blending structured and unstructured data in KGs to power context engineering based on Senzing, DSPy, LanceDB
+  1. **Part 1**: Visualize fraud networks, using Senzing, OpenSanctions, Open Ownership, Maplib, RyuGraph, yWorks
+  2. **Part 2**: Blending structured and unstructured data in KGs for context engineering using Senzing, LanceDB, DSPy, Ollama
   3. **Part 3**: How to become a money launderer
 
 Note that due to sudden unforeseen changes in Kuzu, we've had to adjust the content of this course, and one of the original co-authors, **Prashanth Rao**, will not be able to join. Now we'll use RyuGraph in place of Kuzu -- and also making lots of use of NetworkX, which can be scaled and accelerated using cuGraph.
@@ -96,7 +98,7 @@ Tutorial: [PART1 instructions](PART1.md)
   * Duration: 30 minutes
   * GitHub repository: <https://github.com/DerwenAI/strwythura>
 
-Blending structured and unstructured data in KGs to power context engineering based on Senzing, DSPy, LanceDB.
+Blending structured and unstructured data in KGs to power context engineering based on Senzing, LanceDB, DSPy, Ollama.
 
 We'll start with a brief intro lecture covering why ["unbundling the graph in GraphRAG"](https://www.oreilly.com/radar/unbundling-the-graph-in-graphrag/) allows more effective curation of the semantics for the domain-specific context, and produces improved AI application workflows. Then we'll have a live demo and walk through the highlights of this implementation in the code.
 
@@ -135,7 +137,7 @@ Tutorial: [PART2 instructions](PART2.md)
 
 We'll start with a brief intro lecture about the "Azerbaijani Laundromat" incident (~$3B money laundering) with real-world examples of how graph technologies empower anti-fraud investigations.
 
-  1. Review the `AML.md` points summarizing excerpts from _The Dark Money Files_ by Graham Barrow and Ray Blake.
+  1. Review the `AML.md` points summarizing excerpts from [_The Dark Money Files_](https://www.thedarkmoneyfiles.com/) by **Graham Barrow** and **Ray Blake**.
   2. Run the `occrp.ipynb` notebook in the `kleptosyn` repo for forensic accounting, graph-based flow analysis, and visualization of the Azerbaijani Laundromat leaked data from OCCRP.
   3. Run the `aml_transact.ipynb` notebook in this masterclass repo to show how synthetic data for wire transfer transactions can simulate patterns of criminal tradecraft among money laundering networks represented in a graph.
   4. Resources for how data practitioners can get involved: learn more, human trafficking certification, support whistleblowers, etc.
@@ -146,9 +148,9 @@ Tutorial: [PART3 instructions](PART3.md)
 ### Links to the components
 
   * <https://www.thedarkmoneyfiles.com/>
-  * <https://youtu.be/Gtp7U0iq-2I?feature=shared>
-  * <https://github.com/DerwenAI/kleptosyn>
   * <https://www.occrp.org/en/project/the-azerbaijani-laundromat/the-raw-data>
+  * <https://github.com/DerwenAI/kleptosyn>
+  * <https://youtu.be/Gtp7U0iq-2I?feature=shared>
 
 ---
 
