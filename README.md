@@ -104,7 +104,7 @@ use cases.
 
 Tutorial: [PART1 instructions](PART1.md)
 
-### Links to the components
+### Links to components
 
   * <https://github.com/senzing-garage/sz-semantics>
   * <https://github.com/senzing-garage/serve-grpc>
@@ -175,7 +175,7 @@ implementation in the code.
 
 Tutorial: [PART2 instructions](PART2.md)
 
-### Links to the components
+### Links to components
 
   * <https://senzing.com/what-is-entity-resolution/>
   * <https://lancedb.com/>
@@ -196,7 +196,7 @@ Tutorial: [PART2 instructions](PART2.md)
 
 Let's build on what we covered in **Part 1** and **Part 2** to develop
 more sophisticated graph-based analysis for fraud tradecraft. Recall
-from the general case data model used for anti-fraud that the _event_
+from the general-case data model used for anti-fraud that the _event_
 data is difficult to obtain, and we did not use it in **Part 1**. 
 
 So now we will introduce event data from whistleblower leaks, to
@@ -210,18 +210,22 @@ incident (~$3B money laundering) with real-world examples of how graph
 technologies empower anti-fraud investigations.
 
   1. Review the _anti-money laundering_ points in summarized excerpts from [_The Dark Money Files_](https://www.thedarkmoneyfiles.com/) by **Graham Barrow** and **Ray Blake**.
-  2. Demo of the notebook in the `kleptosyn` repo for forensic accounting, graph-based flow analysis, and visualization of the Azerbaijani Laundromat leaked data from `OCCRP`.
-  3. Demo of the `aml_transact.ipynb` notebook in this repo to show how synthetic data for wire transfer transactions can simulate patterns of criminal tradecraft among fraud networks represented in a graph.
-  4. Review resources for how data practitioners can get involved: learn more, human trafficking certification, support whistleblowers, etc.
+  2. Demo of the notebook in the `kleptosyn` repo for forensic accounting, graph-based flow analysis, and interactive visualization of the Azerbaijani Laundromat leaked data from `OCCRP`.
+  3. Demo of the AML notebook in this repo to show how synthetic data for wire transfer transactions can simulate patterns of criminal tradecraft among fraud networks represented in a graph.
+  4. Review resources for how data practitioners can get involved: GraphGeeks community, learn more about AML, human trafficking certification, support whistleblowers, etc.
   5. Q&A discussion.
 
 Tutorial: [PART3 instructions](PART3.md)
 
-### Links to the components
+### Links to components
 
   * <https://www.thedarkmoneyfiles.com/>
   * <https://www.occrp.org/en/project/the-azerbaijani-laundromat/the-raw-data>
   * <https://github.com/DerwenAI/kleptosyn>
+  * <https://networkx.org/>
+  * <https://pyvis.readthedocs.io/>
+  * <https://seaborn.pydata.org/>
+  * <https://matplotlib.org/>
   * <https://youtu.be/Gtp7U0iq-2I?feature=shared>
 
 ---
