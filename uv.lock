@@ -158,14 +158,12 @@ dependencies = [
     { name = "polars" },
     { name = "pyarrow" },
     { name = "pydantic" },
-    { name = "python-dotenv" },
     { name = "pyvis" },
     { name = "ryugraph" },
     { name = "seaborn" },
     { name = "sz-semantics" },
     { name = "watermark" },
     { name = "yfiles-jupyter-graphs" },
-    { name = "yfiles-jupyter-graphs-for-kuzu" },
 ]
 
 [package.dev-dependencies]
@@ -175,22 +173,20 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "icecream", specifier = "==2.1.4" },
-    { name = "jupyterlab", specifier = "==4.4.8" },
+    { name = "icecream", specifier = ">=2.1.4" },
+    { name = "jupyterlab", specifier = ">=4.4.8" },
     { name = "matplotlib", specifier = ">=3.10.5" },
-    { name = "networkx", specifier = "==3.4.2" },
+    { name = "networkx", specifier = ">=3.4.2" },
     { name = "numpy", specifier = ">=2.3.2" },
-    { name = "polars", specifier = "==1.29.0" },
-    { name = "pyarrow", specifier = "==20.0.0" },
+    { name = "polars", specifier = ">=1.29.0" },
+    { name = "pyarrow", specifier = ">=20.0.0" },
     { name = "pydantic", specifier = ">=2.11.7" },
-    { name = "python-dotenv", specifier = "==1.1.0" },
     { name = "pyvis", specifier = ">=0.3.2" },
     { name = "ryugraph", specifier = ">=25.9.0" },
     { name = "seaborn", specifier = ">=0.13.2" },
     { name = "sz-semantics", specifier = ">=1.3.1" },
     { name = "watermark", specifier = ">=2.5.0" },
-    { name = "yfiles-jupyter-graphs", specifier = "==1.10.5" },
-    { name = "yfiles-jupyter-graphs-for-kuzu", specifier = "==0.0.4" },
+    { name = "yfiles-jupyter-graphs", specifier = ">=1.10.5" },
 ]
 
 [package.metadata.requires-dev]
@@ -1475,15 +1471,6 @@ wheels = [
 ]
 
 [[package]]
-name = "python-dotenv"
-version = "1.1.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/88/2c/7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5baf/python_dotenv-1.1.0.tar.gz", hash = "sha256:41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5", size = 39920 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/1e/18/98a99ad95133c6a6e2005fe89faedf294a748bd5dc803008059409ac9b1e/python_dotenv-1.1.0-py3-none-any.whl", hash = "sha256:d7c01d9e2293916c18baf562d95698754b0dbbb5e74d457c45d4f6561fb9d55d", size = 20256 },
-]
-
-[[package]]
 name = "python-json-logger"
 version = "3.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1990,18 +1977,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/33/2a/f74a5b73d1a81c3907700f345eeb1c194c54e7e34d3e6069724c30b566e3/yfiles_jupyter_graphs-1.10.5.tar.gz", hash = "sha256:15d4355e02c1783c556e55b9c2565d92853d1408dad70f11c056e173f458c3c7", size = 10694733 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/23/a0/0af28cb6c66779f070b070ce0b7a379127d290ad267504faa5c5aa66cb22/yfiles_jupyter_graphs-1.10.5-py3-none-any.whl", hash = "sha256:02fe6b37140ccec1a167e4fe996b889c8938a0de835deb90b25ea48523a17e20", size = 15685775 },
-]
-
-[[package]]
-name = "yfiles-jupyter-graphs-for-kuzu"
-version = "0.0.4"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "yfiles-jupyter-graphs" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/2a/32/aa9941a4c2ac935cd66f7a8bb3eeb5c7b1d3f097a6f1fbfc359c4a18815c/yfiles_jupyter_graphs_for_kuzu-0.0.4.tar.gz", hash = "sha256:fd03f42b902587398dbd65bc17aa4ff94f7a856748274e83d5001a5b10f9db87", size = 16521 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/45/5d/5c8d30d08e74b25806eba8f8db560377109e701ffc0bdcb44c4b4bea4d46/yfiles_jupyter_graphs_for_kuzu-0.0.4-py3-none-any.whl", hash = "sha256:2853b39d50b072f964fb03b84c1ff8d0b14f5360d7a4792c9d2f09dedbf6708b", size = 13941 },
 ]
 
 [[package]]
