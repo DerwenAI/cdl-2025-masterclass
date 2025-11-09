@@ -15,17 +15,17 @@ Thu Nov 20, 2025
 
 Integrating structured and unstructured data sources into high-quality
 knowledge graphs is an incredibly common need in production use
-cases. Downstream, there may be many patterns of usage for the KG such
-as graph analytics, dashboards, GraphRAG, question/answer chat bots,
-agents, and so on.
+cases. Downstream there may be several patterns of usage for a
+high-quality KG, such as graph analytics, dashboards, GraphRAG,
+question/answer chat bots, agents, tools, memory, planners, and so on.
 
 Through this masterclass, we will leverage insights from the tutorial
 steps described below to identify patterns of _tradecraft_ within a
 graph, as a fraud analyst team at a bank would do.
 
-Overall, we will show how the use of available datasets with contemporary
+Overall, we will show how to use open datasets with contemporary
 [_entity resolution_](https://senzing.com/entity-resolution-generative-ai/)
-enhances AI applications for more trusted outcomes, streamlined
+to enhance AI applications for more trusted outcomes, streamlined
 governance, better customer experiences, and accelerated innovation.
 
 A tutorial in three parts:
@@ -38,7 +38,7 @@ Note that due to sudden unforeseen changes for `KùzuDB`, we've had to
 adjust the content of this course, and one of the original co-authors,
 **Prashanth Rao**, will not be able to join. Now we'll use `RyuGraph`
 instead, and also make loads of use of `NetworkX`, which can be scaled
-and accelerated using `cuGraph` on GPUs..
+and accelerated using `cuGraph` on NVIDIA GPUs.
 
 We will also include additional content about using `LanceDB` and
 `DSPy` for context engineering, plus a section on how to become a
@@ -66,12 +66,12 @@ enhance downstream AI applications.
   * Familiarity with popular packages such as Jupyter and Docker
 
 **Important:**
-You must have both [Docker](https://docs.docker.com/get-docker/) 
+You must have both [Docker](https://docs.docker.com/get-docker/)
 and [Python 3.13+](https://www.python.org/downloads/release/python-3139/)
 downloaded and installed to run this tutorial.
 
-Before going to the conference, you need to have downloaded two
-containers onto your laptop:
+Before going to the conference, you need to have downloaded
+**these two containers** onto your laptop:
 
 ```bash
 docker pull senzing/serve-grpc:latest
@@ -143,7 +143,7 @@ several key points during graph+vector construction:
 Then during integration with a large languge model (LLM), this
 approach also extends typical practices with:
 
-  * leverage entity embedding instead of `Text2Cypher` (could also be complementary)
+  * using entity embedding instead of `Text2Cypher` (could also be complementary)
   * leverage bi-direction links between entity and text chunk embeddings
   * semantic expansion based on the KG, which can be constrained by domain vocabularies
   * semantic random walk so that entity reranking drives text chunk reranking
@@ -169,7 +169,7 @@ implementation in the code.
   6. Curate semantics for optimizing the AI app outcomes within a specific domain.
   7. Entity linking: promote entities extracted from the unstructured content into the KG, linked to ER results.
   8. Build _entity embeddings_ in `GenSim`, determining their neighborhoods semantic expansion.
-  9. Leverages `NetworkX` for _semantic expansion_ and _semantic random walks_ to rerank text chunks in `LanceDB`.
+  9. Use `NetworkX` for _semantic expansion_ and _semantic random walks_ to rerank text chunks in `LanceDB`.
   10. Implement a question/answer chat bot based on GraphRAG using `DSPy` and `Ollama`, running the `gemma3:12b` LLM locally.
   11. Q&A discussion.
 
@@ -197,11 +197,11 @@ Tutorial: [PART2 instructions](PART2.md)
 Let's build on what we covered in **Part 1** and **Part 2** to develop
 more sophisticated graph-based analysis for fraud tradecraft. Recall
 from the general-case data model used for anti-fraud that the _event_
-data is difficult to obtain, and we did not use it in **Part 1**. 
+data is difficult to obtain, and we did not use it in **Part 1**.
 
 So now we will introduce event data from whistleblower leaks, to
-analyze a real-world case. Then let's examine how to leverage _leaked
-data_ for simulations which generate _synthetic data_. This allows for
+analyze a real-world case. Then let's examine how to use _leaked data_
+to build simulations which generate _synthetic data_. This allows for
 better evaluation of anti-fraud approaches, both in terms of scale and
 diversity of patterns.
 
@@ -230,7 +230,7 @@ Tutorial: [PART3 instructions](PART3.md)
 
 ---
 
-Kudos to 
+Kudos to
 [@prrao87](https://github.com/prrao87),
 [@brianmacy](https://github.com/brianmacy),
 [@jbutcher21](https://github.com/jbutcher21),
