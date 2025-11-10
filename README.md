@@ -19,9 +19,9 @@ cases. Downstream there may be several patterns of usage for a
 high-quality KG, such as graph analytics, dashboards, GraphRAG,
 question/answer chat bots, agents, tools, memory, planners, and so on.
 
-Through this masterclass, we will leverage insights from the tutorial
-steps described below to identify patterns of _tradecraft_ within a
-graph, as a fraud analyst team at a bank would do.
+Throughout this masterclass, we will leverage insights from the
+tutorial steps described below to identify patterns of _tradecraft_
+within a graph, as a fraud analyst team at a bank would do.
 
 Overall, we will show how to use open datasets with contemporary
 [_entity resolution_](https://senzing.com/entity-resolution-generative-ai/)
@@ -235,7 +235,7 @@ We'll start with a brief intro about the "Azerbaijani Laundromat"
 incident (~$3B money laundering) with real-world examples of how graph
 technologies empower anti-fraud investigations.
 
-  1. Review the _anti-money laundering_ points in summarized excerpts from [_The Dark Money Files_](https://www.thedarkmoneyfiles.com/) by **Graham Barrow** and **Ray Blake**.
+  1. Review _anti-money laundering_ points in summarized excerpts from the highly recommended [_The Dark Money Files_](https://www.thedarkmoneyfiles.com/) by **Graham Barrow** and **Ray Blake**.
   2. Demo of the notebook in the `kleptosyn` repo for forensic accounting, graph-based flow analysis, and interactive visualization of the Azerbaijani Laundromat leaked data from `OCCRP`.
   3. Demo of the AML notebook in this repo to show how synthetic data for wire transfer transactions can simulate patterns of criminal tradecraft among fraud networks represented in a graph.
   4. Review resources for how data practitioners can get involved: GraphGeeks community, learn more about AML, human trafficking certification, support whistleblowers, etc.
