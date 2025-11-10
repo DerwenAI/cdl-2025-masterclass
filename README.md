@@ -34,22 +34,13 @@ A tutorial in three parts:
   2. **Part 2**: Entity embeddings in graphs: blend structured + unstructured data, using `Senzing`, `LanceDB`, `DSPy`, `Ollama`
   3. **Part 3**: How to become a money launderer
 
-NB: due to sudden changes for `KùzuDB`, we've had to adjust the
-content of this course: **Prashanth Rao** will not be able to join,
-and we'll use `RyuGraph` and also `NetworkX` instead. The latter can
-be scaled and accelerated using `cuGraph` on NVIDIA GPUs.
-
-We will also include additional content about using `LanceDB` and
-`DSPy` for context engineering, plus a section on how to become a
-money launderer -- leveraging graph analytics to examine the leaked
-`OCCRP` data for the "Azerbaijani Laundromat" case.
-
 ### Course Goals
 
 Gain hands-on experience with tools in Python using high-quality
-knowledge graphs with entity resolution, graph algorithms, interactive
-visualization, plus context engineering both to augment the graph and
-enhance downstream AI applications.
+knowledge graphs with _entity resolution_, _computable semantics_,
+_entity embeddings_, _graph algorithms_, _interactive visualization_,
+plus _context engineering_ to augment the graph and enhance downstream
+AI applications.
 
 ### Target Audience
 
@@ -76,6 +67,17 @@ Before going to the conference, you need to have downloaded
 docker pull senzing/serve-grpc:latest
 docker pull ryugraphdb/explorer:latest
 ```
+
+NB: due to sudden changes for `KùzuDB`, we've had to adjust the
+content of this course: **Prashanth Rao** will not be able to join,
+and we'll use `RyuGraph` and also `NetworkX` instead. The latter can
+be scaled and accelerated using `cuGraph` on NVIDIA GPUs.
+
+We will include additional content using `LanceDB` and `DSPy` for
+context engineering, plus a section on "how to become a money launderer"
+-- leveraging graph analytics to examine `OCCRP` leaked data from the
+"Azerbaijani Laundromat" case.
+
 
 ---
 
@@ -122,11 +124,6 @@ Tutorial: [PART1 instructions](PART1.md)
 
   * Duration: 30 minutes
   * GitHub repository: <https://github.com/DerwenAI/strwythura>
-
-Let's build on what we covered in **Part 1**, examining how to
-leverage _entity embeddings_ in graphs, to blend structured and
-unstructured data, using `Senzing`, `LanceDB`, `DSPy`, `Ollama`
-for improved _context engineering_.
 
 Let's build on what we covered in **Part 1**, and examine how to use
 _entity embeddings_ in graphs, to blend structured and unstructured
