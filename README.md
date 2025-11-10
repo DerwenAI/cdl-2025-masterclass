@@ -128,7 +128,7 @@ Tutorial: [PART1 instructions](PART1.md)
 Let's build on what we covered in **Part 1**, and examine how to use
 _entity embeddings_ in graphs, to blend structured and unstructured
 data, using `Senzing`, `LanceDB`, `RDFlib`, `NetworkX`, `DSPy`,
-`Ollama` -- applying a very intentional approach to develping
+`Ollama` -- applying a more intentional approach to developing
 "context" for _context engineering_.
 
 This uses _entity resolution_ (ER) with _computable semantics_,
@@ -138,10 +138,10 @@ words, resolve identify information about people and organizations
 along with relations among the entities, their synonyms, and so on,
 and use this as a "backbone" for working with the graph.
 
-During KG construction and updates, the domain-specific context guides
-_named entity recognition_ (NER) and _entity linking_ to extract
-entities from unstructured data sources and link these contextually
-into the KG.
+During KG construction and updates, the domain-specific context
+focuses the _named entity recognition_ (NER) and _entity linking_ to
+extract entities from unstructured data sources and link these
+contextually into the KG.
 
 Given the thesaurus, we'll construct the following bundle of assets
 from the unstructured sources:
@@ -150,19 +150,19 @@ from the unstructured sources:
   * _entity embedding_ model, built from sequences of lemmatized noun phrases
   * _lexical graph_ constructed from parsed text chunks using a _textgraph_ algorithm
 
-This makes better afforandances for _human-in-the-loop_ (HITL)
+This provides better afforandances for _human-in-the-loop_ (HITL)
 curation of extracted entities (vs. resolved entities) before their
 promotion into the KG, and also guides how to tranform RDF
 representation (which allows for validation, relation range
 constraints, etc.) into a property graph.
 
 Working from these assets as a basis, we can promote graph elements
-(entities, relations, properties) into the resulting KG, keeping the
-cross-links in the vector store.
+(entities, relations, properties) into the resulting KG, retaining the
+cross-links with the vector store.
 
-Downstream from the KG, entity embeddings are known for improving
-outcomes in AI applications. During run-time use, entity embeddings
-enhance LLM integrations in multiple w2ays:
+Downstream from the KG, during run-time use, the entity embeddings
+enhance LLM integrations in multiple ways to enhance outcomes in AI
+applications.
 
   * query the entity embedding model, as a more robust alternative to `Text2Cypher` (or complementary)
   * use _semantic expansion_ and _random walks_ so than entity reranking drives text chunk reranking
