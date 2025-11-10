@@ -31,7 +31,7 @@ governance, better customer experiences, and accelerated innovation.
 A tutorial in three parts:
 
   1. **Part 1**: Visualize fraud networks, using `Senzing`, `OpenSanctions`, `Open Ownership`, Maplib, `RyuGraph`, `yWorks`
-  2. **Part 2**: Blending structured and unstructured data in KGs for context engineering using `Senzing`, `LanceDB`, `DSPy`, `Ollama`
+  2. **Part 2**: Entity embeddings in graphs: blend structured + unstructured data, using `Senzing`, `LanceDB`, `DSPy`, `Ollama`
   3. **Part 3**: How to become a money launderer
 
 NB: due to sudden changes for `KùzuDB`, we've had to adjust the
@@ -118,47 +118,75 @@ Tutorial: [PART1 instructions](PART1.md)
 
 ---
 
-## Part 2: Unbundling the Graph in GraphRAG
+## Part 2: Entity Embeddings in Graphs
 
   * Duration: 30 minutes
   * GitHub repository: <https://github.com/DerwenAI/strwythura>
 
-Let's build on what we covered in **Part 1**, to show how to blend
-structured and unstructured data in KGs for _context engineering_
-based on `Senzing`, `LanceDB`, `DSPy`, `Ollama`.
+Let's build on what we covered in **Part 1**, examining how to
+leverage _entity embeddings_ in graphs, to blend structured and
+unstructured data, using `Senzing`, `LanceDB`, `DSPy`, `Ollama`
+for improved _context engineering_.
 
-This approach extends on much of what is published elsewhere by
-several key points during graph+vector construction:
+Let's build on what we covered in **Part 1**, and examine how to use
+_entity embeddings_ in graphs, to blend structured and unstructured
+data, using `Senzing`, `LanceDB`, `DSPy`, `Ollama` -- applying a very
+intentional approach to develping "context" for _context engineering_.
 
-  * entity resolution (ER) on structured data, as a generative approach for graph elements
-  * text chuning on paragraph boundaries, split into sentences which can be identified later
-  * natural language parsing per sentence, using zero-shot NER with context from the SKOS taxonomy
-  * entity linking of NER with ER results based on tagged, lemmatized noun phrases
-  * textgraph algorithm used to contruct a lexical graph and rank entities based on usage
-  * embedding model of co-occurring entities, with bi-directional links to text chunks
-  * human-in-the-loop curation of extracted entities (vs. resolved entities) for promotion into the KG
-  * tranform RDF representation (to allow for validation, range constraints, etc.) into a property graph
+This uses _entity resolution_ (ER) with _computable semantics_,
+starting from a _taxonomy_ curated per use case, then generating a
+_domain-specific thesaurus_ from structured data sources. In other
+words, resolve identify information about people and organizations
+along with relations among the entities, their synonyms, and so on,
+and use this as a "backbone" for working with the graph.
 
-Then during integration with a large languge model (LLM), this
-approach also extends typical practices with:
+During KG construction and updates, the domain-specific context guides
+_named entity recognition_ (NER) and _entity linking_ to extract
+entities from unstructured data sources and link these contextually
+into the KG.
 
-  * using entity embedding instead of `Text2Cypher` (could also be complementary)
-  * leverage bi-direction links between entity and text chunk embeddings
-  * semantic expansion based on the KG, which can be constrained by domain vocabularies
-  * semantic random walk so that entity reranking drives text chunk reranking
+Given the thesaurus, we'll construct the following bundle of assets
+from the unstructured sources:
 
-In other words, leverage the graph structure from entity resolution,
-plus the computable semantics and entity embeddings, to improve the
-domain-specific context for downstream AI applications.
+  * _vector store_ with embeddings of text chunks, cross-linked with entities
+  * _entity embedding_ model, built from sequences of lemmatized noun phrases
+  * _lexical graph_ constructed from parsed text chunks using a _textgraph_ algorithm
 
-We'll start with a brief introduction covering why
-["unbundling the graph in GraphRAG"](https://www.oreilly.com/radar/unbundling-the-graph-in-graphrag/)
-allows more effective curation of semantics-driving-embeddings for
-domain-specific context, improving downstream AI application
-workflows.
+This makes better afforandances for _human-in-the-loop_ (HITL)
+curation of extracted entities (vs. resolved entities) before their
+promotion into the KG, and also guides how to tranform RDF
+representation (which allows for validation, relation range
+constraints, etc.) into a property graph.
 
-Then we'll have a live demo and walk through the highlights of this
-implementation in the code.
+Working from these assets as a basis, we can promote graph elements
+(entities, relations, properties) into the resulting KG, keeping the
+cross-links in the vector store.
+
+Downstream from the KG, entity embeddings are known for improving
+outcomes in AI applications. During run-time use, entity embeddings
+enhance LLM integrations in multiple w2ays:
+
+  * query the entity embedding model, as a more robust alternative to `Text2Cypher` (or complementary)
+  * use _semantic expansion_ and _random walks_ so than entity reranking drives text chunk reranking
+  * include text definitions for classes in the taxonomy into the reranked text chunks
+
+**Important**: this component is being re-written to make it clearer
+to understand the workflow steps and components used. In particular,
+this tutorial does not yet include some important components which
+would be needed for a more ideal implementation:
+
+  * also use domain context to constrain _relation resolution_
+  * resolving _co-reference_ within the source text
+  * use of _multimodal_ embeddings
+
+Stay tuned for more soon -- _same bat-time, same bat-channel!_
+
+We will this section begin with a brief introduction to the topics
+plus overview of available (albeit less often discussed) technology
+components.
+
+Then we'll have a live demo and code walk-through in the
+implementation:
 
   1. Run _entity resolution_ in `Senzing` to merge the datasets and generate graph "building blocks" in RDF, as a domain-specific _thesaurus_.
   2. Construct a "backbone" for a knowledge graph in `NetworkX` from the thesaurus.
@@ -185,6 +213,7 @@ Tutorial: [PART2 instructions](PART2.md)
   * <https://dspy.ai/>
   * <https://ollama.com/>
   * <https://huggingface.co/google/gemma-3-12b-it>
+  * <https://pyinstrument.readthedocs.io/>
 
 ---
 
