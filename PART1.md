@@ -5,4 +5,5 @@ _Combining Data from Structured and Unstructured Sources to create High-Quality 
 
 ## Part 1:
  
-**under construction**
+**to be released on the day of the course**
+

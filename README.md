@@ -34,11 +34,10 @@ A tutorial in three parts:
   2. **Part 2**: Blending structured and unstructured data in KGs for context engineering using `Senzing`, `LanceDB`, `DSPy`, `Ollama`
   3. **Part 3**: How to become a money launderer
 
-Note that due to sudden unforeseen changes for `KùzuDB`, we've had to
-adjust the content of this course, and one of the original co-authors,
-**Prashanth Rao**, will not be able to join. Now we'll use `RyuGraph`
-instead, and also make loads of use of `NetworkX`, which can be scaled
-and accelerated using `cuGraph` on NVIDIA GPUs.
+NB: due to sudden changes for `KùzuDB`, we've had to adjust the
+content of this course: **Prashanth Rao** will not be able to join,
+and we'll use `RyuGraph` and also `NetworkX` instead. The latter can
+be scaled and accelerated using `cuGraph` on NVIDIA GPUs.
 
 We will also include additional content about using `LanceDB` and
 `DSPy` for context engineering, plus a section on how to become a
