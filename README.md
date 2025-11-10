@@ -30,8 +30,8 @@ governance, better customer experiences, and accelerated innovation.
 
 A tutorial in three parts:
 
-  1. **Part 1**: Visualize fraud networks, using `Senzing`, `OpenSanctions`, `Open Ownership`, Maplib, `RyuGraph`, `yWorks`
-  2. **Part 2**: Entity embeddings in graphs: blend structured + unstructured data, using `Senzing`, `LanceDB`, `DSPy`, `Ollama`
+  1. **Part 1**: Visualize fraud networks, using `Senzing`, `OpenSanctions`, `Open Ownership`, `Maplib`, `RyuGraph`, `yWorks`
+  2. **Part 2**: Entity embeddings in graphs: blend structured + unstructured data, using `Senzing`, `LanceDB`, `RDFlib`, `NetworkX`, `DSPy`, `Ollama`
   3. **Part 3**: How to become a money launderer
 
 ### Course Goals
@@ -127,8 +127,9 @@ Tutorial: [PART1 instructions](PART1.md)
 
 Let's build on what we covered in **Part 1**, and examine how to use
 _entity embeddings_ in graphs, to blend structured and unstructured
-data, using `Senzing`, `LanceDB`, `DSPy`, `Ollama` -- applying a very
-intentional approach to develping "context" for _context engineering_.
+data, using `Senzing`, `LanceDB`, `RDFlib`, `NetworkX`, `DSPy`,
+`Ollama` -- applying a very intentional approach to develping
+"context" for _context engineering_.
 
 This uses _entity resolution_ (ER) with _computable semantics_,
 starting from a _taxonomy_ curated per use case, then generating a
