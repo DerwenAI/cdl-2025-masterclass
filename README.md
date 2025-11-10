@@ -36,11 +36,11 @@ A tutorial in three parts:
 
 ### Course Goals
 
-Gain hands-on experience with tools in Python using high-quality
-knowledge graphs with _entity resolution_, _computable semantics_,
-_entity embeddings_, _graph algorithms_, _interactive visualization_,
-plus _context engineering_ to augment the graph and enhance downstream
-AI applications.
+Gain hands-on experience in Python using high-quality knowledge graphs
+with _entity resolution_, _computable semantics_, _entity embeddings_,
+_graph algorithms_, _interactive visualization_, plus _context
+engineering_ to augment the graph and enhance downstream AI
+applications.
 
 ### Target Audience
 
