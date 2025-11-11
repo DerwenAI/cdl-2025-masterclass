@@ -92,8 +92,8 @@ use cases.
 
 1. Download the Docker containers for `Senzing` gRPC server and `RyuGraph` Explorer (during the intro)
 2. Initialize the Python environment on your laptop using `uv` to load the library dependencies.
-3. Download slices of datasets from `OpenSanctions` and `Open Ownership`.
-4. Launch the `Senzing` container and run it in the background for a gRPC server.
+3. Launch the `Senzing` container and run it in the background for a gRPC server.
+4. Download slices of the `OpenSanctions` and `Open Ownership` datasets.
 5. Run _entity resolution_ in `Senzing` to merge the datasets and generate graph "building blocks" in RDF, as a domain-specific thesaurus.
 6. Review the _metadata application profile_ (MAP) for the SKOS taxonomy used, how it integrates with [NIEM](https://niem.github.io/), [FollowTheMoney](https://followthemoney.tech/), [BODS](https://bods-data.openownership.org/), and so on.
 7. Use SPARQL queries in `Maplib` to transform the RDF into `Polars` dataframes.

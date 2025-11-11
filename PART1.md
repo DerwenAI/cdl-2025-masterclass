@@ -7,3 +7,8 @@ _Combining Data from Structured and Unstructured Sources to create High-Quality 
  
 **to be released on the day of the course**
 
+
+
+```bash
+.venv/bin/jupyter-lab
+```
