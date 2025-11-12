@@ -193,7 +193,7 @@ requires-dist = [
     { name = "seaborn", specifier = ">=0.13.2" },
     { name = "sz-semantics", specifier = ">=1.3.3" },
     { name = "watermark", specifier = ">=2.5.0" },
-    { name = "yfiles-jupyter-graphs", specifier = "==1.10.5" },
+    { name = "yfiles-jupyter-graphs", specifier = ">=1.10.5" },
     { name = "yfiles-jupyter-graphs-for-kuzu", specifier = "==0.0.4" },
 ]
 
