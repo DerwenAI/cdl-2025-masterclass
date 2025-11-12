@@ -30,7 +30,7 @@ governance, better customer experiences, and accelerated innovation.
 
 A tutorial in three parts:
 
-  1. **Part 1**: Visualize fraud networks, using `Senzing`, `OpenSanctions`, `Open Ownership`, `Maplib`, `RyuGraph`, `yWorks`
+  1. **Part 1**: Visualize fraud networks, using `Senzing`, `OpenSanctions`, `Open Ownership`, `Polars`, `Maplib`, `NetworkX`, `yWorks`
   2. **Part 2**: Entity embeddings in graphs: blend structured + unstructured data, using `Senzing`, `LanceDB`, `RDFlib`, `NetworkX`, `DSPy`, `Ollama`
   3. **Part 3**: How to become a money launderer
 
@@ -91,15 +91,15 @@ We'll start with a brief intro lecture covering the background for
 leveraging these technologies together with open data in an anti-fraud
 use cases.
 
-1. Download the Docker containers for `Senzing` gRPC server and `RyuGraph` Explorer (during the intro)
+1. Download the Docker container for `Senzing` gRPC server (during the intro)
 2. Launch the `Senzing` container and run it in the background for a gRPC server.
 3. Initialize the Python environment on your laptop using `uv` to load the library dependencies.
 4. Download slices of the `OpenSanctions` and `Open Ownership` datasets.
 5. Run _entity resolution_ in `Senzing` to merge the datasets and generate graph "building blocks" in RDF, as a domain-specific thesaurus.
 6. Review the _metadata application profile_ (MAP) for the SKOS taxonomy used, how it integrates with [NIEM](https://niem.github.io/), [FollowTheMoney](https://followthemoney.tech/), [BODS](https://bods-data.openownership.org/), and so on.
-7. Use SPARQL queries in `Maplib` to transform the RDF into `Polars` dataframes.
-8. Also transform records from the datasets into `Polars` dataframes.
-9. Load tables into `RyuGraph` from the dataframes.
+7. Also transform records from the datasets into `Polars` dataframes.
+8. Use SPARQL queries in `Maplib` to transform the RDF into `Polars` dataframes.
+9. Load tables into a graph database from the dataframes.
 10. Leverage graph algorithms in `NetworkX`: partitioning to identify subgraphs as potential fraud rings within the graph, and betweenness centrality to rank individuals of interest within each subgraph.
 11. Run visualizations using `yFiles` to examine the [2021 South London Papa Johns tax evasion case](https://www.newsshopper.co.uk/news/19164815.boss-bromley-catford-papa-johns-stores-jailed/)
 12. Q&A discussion.
@@ -112,12 +112,10 @@ Tutorial: [PART1 instructions](PART1.md)
   * <https://github.com/senzing-garage/serve-grpc>
   * <https://www.opensanctions.org/>
   * <https://www.openownership.org/>
-  * <https://ryugraph.io/>
   * <https://github.com/DataTreehouse/maplib>
   * <https://pola.rs/>
   * <https://networkx.org/>
-  * <https://github.com/rapidsai/nx-cugraph>
-  * <https://github.com/yWorks/yfiles-jupyter-graphs>
+  * <https://www.yfiles.com/>
 
 ---
 

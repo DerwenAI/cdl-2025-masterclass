@@ -3,7 +3,7 @@
 **Connected Data London 2025 Masterclass:**  
 _Combining Data from Structured and Unstructured Sources to create High-Quality Knowledge Graphs_
 
-**Part 1**: Visualize fraud networks, using `Senzing`, `OpenSanctions`, `Open Ownership`, `Maplib`, `RyuGraph`, `yWorks`
+**Part 1**: Visualize fraud networks, using `Senzing`, `OpenSanctions`, `Open Ownership`, `Polars`, `Maplib`, `NetworkX`, `yWorks`
 
 
 ## GitHub repository for the tutorial
