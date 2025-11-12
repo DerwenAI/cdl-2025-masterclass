@@ -30,7 +30,7 @@ docker pull senzing/serve-grpc:latest
 
 Using another terminal window, launch the container and run it in the
 background to provide a gRPC server, from which to call the Senzing
-SDK from Python code running in JupyterLab notebooks.
+SDK from Python code running in `JupyterLab` notebooks.
 
 ```bash
 docker run -it --publish 8261:8261 --rm senzing/serve-grpc
@@ -59,7 +59,7 @@ resolution_ (ER) to merge these. Then generate a _domain-specific
 thesaurus_ from the ER results, used to generate "building blocks" for
 constructing a graph.
 
-Launch JupyterLab and open the `1.run_er.ipynb` notebook:
+Launch `JupyterLab` and open the `1.run_er.ipynb` notebook:
 
 ```bash
 .venv/bin/jupyter-lab 1.run_er.ipynb
@@ -80,7 +80,7 @@ In your browser, open
 Transform the source data records from the open datasets into `Polars` dataframes.
 Then serialize these dataframes as CSV files for use later.
 
-In JupyterLab open the `2.open_data.ipynb` notebook:
+In `JupyterLab` open the `2.open_data.ipynb` notebook:
 
 ```bash
 .venv/bin/jupyter-lab 2.open_data.ipynb
@@ -92,7 +92,7 @@ In JupyterLab open the `2.open_data.ipynb` notebook:
 We'll use SPARQL queries in `Maplib` to reform the RDF into _property graph_ elements in `Polars` dataframes.
 Then load nodes and edges from the dataframes into their corresponding tables in the graph database.
 
-In JupyterLab open the `3.reform.ipynb` notebook:
+In `JupyterLab` open the `3.reform.ipynb` notebook:
 
 ```bash
 .venv/bin/jupyter-lab 3.reform.ipynb
@@ -102,13 +102,25 @@ In JupyterLab open the `3.reform.ipynb` notebook:
 
 Leverage graph algorithms in `NetworkX`: 
 
-  - partitioning to identify subgraphs as potential fraud rings within the graph
-  - betweenness centrality to rank individuals of interest within each subgraph
+  - partitioning to _identify subgraphs_ as potential fraud rings within the graph
+  - betweenness centrality to _rank individuals_ of interest within each subgraph
+
+In `JupyterLab` open the `4.analytics.ipynb` notebook:
+
+```bash
+.venv/bin/jupyter-lab 4.analytics.ipynb
+```
 
 
 ## Interactive visualization
 
-In JupyterLab open the `5.kg_vis.ipynb` notebook:
+Run visualizations using
+[`yFiles`](https://www.yworks.com/products/yfiles-graphs-for-jupyter)
+to examine a subgraph about the
+[2021 South London Papa Johns](https://www.newsshopper.co.uk/news/19164815.boss-bromley-catford-papa-johns-stores-jailed/)
+tax evasion case.
+
+In `JupyterLab` open the `5.kg_vis.ipynb` notebook:
 
 ```bash
 .venv/bin/jupyter-lab 5.kg_vis.ipynb

@@ -101,7 +101,7 @@ use cases.
 8. Use SPARQL queries in `Maplib` to transform the RDF into `Polars` dataframes.
 9. Load tables into a graph database from the dataframes.
 10. Leverage graph algorithms in `NetworkX`: partitioning to identify subgraphs as potential fraud rings within the graph, and betweenness centrality to rank individuals of interest within each subgraph.
-11. Run visualizations using `yFiles` to examine the [2021 South London Papa Johns tax evasion case](https://www.newsshopper.co.uk/news/19164815.boss-bromley-catford-papa-johns-stores-jailed/)
+11. Run visualizations using `yFiles` to examine the [2021 South London Papa Johns](https://www.newsshopper.co.uk/news/19164815.boss-bromley-catford-papa-johns-stores-jailed/) tax evasion case.
 12. Q&A discussion.
 
 Tutorial: [PART1 instructions](PART1.md)
@@ -115,7 +115,8 @@ Tutorial: [PART1 instructions](PART1.md)
   * <https://github.com/DataTreehouse/maplib>
   * <https://pola.rs/>
   * <https://networkx.org/>
-  * <https://www.yfiles.com/>
+  * <https://jupyter.org/>
+  * <https://www.yworks.com/products/yfiles-graphs-for-jupyter>
 
 ---
 
@@ -252,6 +253,8 @@ Tutorial: [PART3 instructions](PART3.md)
   * <https://seaborn.pydata.org/>
   * <https://matplotlib.org/>
   * <https://youtu.be/Gtp7U0iq-2I?feature=shared>
+  * <https://jupyter.org/>
+
 
 ---
 
