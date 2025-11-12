@@ -15,27 +15,24 @@ requires-python = ">=3.13"
 dependencies = [
     # graph technologies
     "sz-semantics>=1.3.3",
+    "maplib>=0.17.12",
     "networkx>=3.4.2",
-    "ryugraph>=25.9.0",
-
+    "kuzu>=0.11.3",
     # Python "nuts and bolts"
     "numpy>=2.3.2",
     "polars>=1.29.0",
     "pydantic>=2.11.7",
     "pyarrow>=20.0.0",
-
     # visualizations
     "matplotlib>=3.10.5",
     "pyvis>=0.3.2",
     "seaborn>=0.13.2",
     "yfiles-jupyter-graphs>=1.10.5",
-
     # notebook demos
     "ipywidgets>=8.1.6",
     "jupyterlab>=4.4.8",
     "jupyterlab-execute-time>=3.2.0",
     "watermark>=2.5.0",
-
     # instrumentation, observability
     "icecream>=2.1.4",
 ]

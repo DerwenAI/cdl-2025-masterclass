@@ -154,6 +154,8 @@ dependencies = [
     { name = "ipywidgets" },
     { name = "jupyterlab" },
     { name = "jupyterlab-execute-time" },
+    { name = "kuzu" },
+    { name = "maplib" },
     { name = "matplotlib" },
     { name = "networkx" },
     { name = "numpy" },
@@ -161,7 +163,6 @@ dependencies = [
     { name = "pyarrow" },
     { name = "pydantic" },
     { name = "pyvis" },
-    { name = "ryugraph" },
     { name = "seaborn" },
     { name = "sz-semantics" },
     { name = "watermark" },
@@ -179,6 +180,8 @@ requires-dist = [
     { name = "ipywidgets", specifier = ">=8.1.6" },
     { name = "jupyterlab", specifier = ">=4.4.8" },
     { name = "jupyterlab-execute-time", specifier = ">=3.2.0" },
+    { name = "kuzu", specifier = ">=0.11.3" },
+    { name = "maplib", specifier = ">=0.17.12" },
     { name = "matplotlib", specifier = ">=3.10.5" },
     { name = "networkx", specifier = ">=3.4.2" },
     { name = "numpy", specifier = ">=2.3.2" },
@@ -186,7 +189,6 @@ requires-dist = [
     { name = "pyarrow", specifier = ">=20.0.0" },
     { name = "pydantic", specifier = ">=2.11.7" },
     { name = "pyvis", specifier = ">=0.3.2" },
-    { name = "ryugraph", specifier = ">=25.9.0" },
     { name = "seaborn", specifier = ">=0.13.2" },
     { name = "sz-semantics", specifier = ">=1.3.3" },
     { name = "watermark", specifier = ">=2.5.0" },
@@ -921,6 +923,40 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/99/dd/841e9a66c4715477ea0abc78da039832fbb09dac5c35c58dc4c41a407b8a/kiwisolver-1.4.9-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:aedff62918805fb62d43a4aa2ecd4482c380dc76cd31bd7c8878588a61bd0369", size = 2391835 },
     { url = "https://files.pythonhosted.org/packages/0c/28/4b2e5c47a0da96896fdfdb006340ade064afa1e63675d01ea5ac222b6d52/kiwisolver-1.4.9-cp314-cp314t-win_amd64.whl", hash = "sha256:1fa333e8b2ce4d9660f2cda9c0e1b6bafcfb2457a9d259faa82289e73ec24891", size = 79988 },
     { url = "https://files.pythonhosted.org/packages/80/be/3578e8afd18c88cdf9cb4cffde75a96d2be38c5a903f1ed0ceec061bd09e/kiwisolver-1.4.9-cp314-cp314t-win_arm64.whl", hash = "sha256:4a48a2ce79d65d363597ef7b567ce3d14d68783d2b2263d98db3d9477805ba32", size = 70260 },
+]
+
+[[package]]
+name = "kuzu"
+version = "0.11.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/96/0c/f141a81485729a072dc527b474e7580d5632309c68ad1a5aa6ed9ac45387/kuzu-0.11.3.tar.gz", hash = "sha256:e7bea3ca30c4bb462792eedcaa7f2125c800b243bb4a872e1eedc16917c1967a", size = 19430620 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c9/e4/2c0e222a9b0605745234fec2774a25dd2e472699931f683f15d28ab8c076/kuzu-0.11.3-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:e20ab3e3b20ccf75219872feb86582f959e313eeb59f51131adf4c91ebfabe30", size = 4093664 },
+    { url = "https://files.pythonhosted.org/packages/88/05/3020ed9a0a7b492597f211f805233b77ef37266a23c27efc40bb7cb37402/kuzu-0.11.3-cp313-cp313-macosx_11_0_x86_64.whl", hash = "sha256:054479d3ce71410b8af2f5fa6aa37883db7fea5b25606af8d3bd7cf717aa5395", size = 4520498 },
+    { url = "https://files.pythonhosted.org/packages/0f/66/1a502700a7f2863f8f60621a412a7074d7eda9e92f18fd1d8d86905aa4d3/kuzu-0.11.3-cp313-cp313-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:143a37f1ae38b6b4337ccfcf42fa4f779a897223fff9c6c29f1a5a5a86911300", size = 6795804 },
+    { url = "https://files.pythonhosted.org/packages/79/c2/1ea8cdc05946cb5906a7ebb451d7268e501ebb51ebecc0437969f8c07450/kuzu-0.11.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:548bfb3045d89bce1fbe89f4a890d636789671abfa80cbde2054c671e6069133", size = 7615668 },
+    { url = "https://files.pythonhosted.org/packages/d1/c3/336d6181f8f50126cf3d7186b3c5479f9f49d973145f79bed45cf87a9bb7/kuzu-0.11.3-cp313-cp313-win_amd64.whl", hash = "sha256:87bf6c369f182a59e5b8a38b3ca288b90fab2827577d9b0d2170a202c42bc8f5", size = 4714372 },
+    { url = "https://files.pythonhosted.org/packages/94/db/e7e6cada6dc924eb8939bd35c5f724f5de4fc430a64d6d9e71b75cd0c271/kuzu-0.11.3-cp313-cp313t-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:eb5c165bc5838059e498e8325939fc6bac075e1941157e8df6ebdd710135d43b", size = 6798556 },
+    { url = "https://files.pythonhosted.org/packages/cf/68/a0fa02134cb255c80b5ed5bb5f6130fbbc75a8ae8be4fd6ea6eb6bc8014b/kuzu-0.11.3-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:88c73dfd3d6a1fb374031050b725236fa9dd9a95424b09b20086a3d274bed51f", size = 7620378 },
+    { url = "https://files.pythonhosted.org/packages/d6/b7/2a4569984995f09476dbf1ef2e0a7298aa9fdb8896f2e8195d80e11786f4/kuzu-0.11.3-cp314-cp314-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:9d2752a9e37adda6aef3bf041932ae3a1cf74ca7e893bbbacdd5e62b3ac6f8c2", size = 6795649 },
+    { url = "https://files.pythonhosted.org/packages/77/13/df6e06a7d7506743c3a6cfbe50ee3f9d3fc58228e2a2fcbe7e74e7c17b00/kuzu-0.11.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:86be7d113e4e2c6761b1701079af8aeffc04c6981517f2d6aa393e883cc46036", size = 7615882 },
+    { url = "https://files.pythonhosted.org/packages/32/85/c52c3b167edcc67da3b8788a20a2fb5b4f045060cbe1aed6121ce3ce83d3/kuzu-0.11.3-cp314-cp314t-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:d72ebd88e231b562e7a60ff88d200825d53e78a681bddd7f8d77b78126a5060c", size = 6798657 },
+    { url = "https://files.pythonhosted.org/packages/06/be/5b4ff168718165c2ff5848ab79e22ecce72ad00522afee6820d390cb0753/kuzu-0.11.3-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:64c7ec822906bdee154eb38d93e64f184d8f94b30bbeaceaa252725f2b9efab3", size = 7620394 },
+]
+
+[[package]]
+name = "maplib"
+version = "0.17.12"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "polars" },
+    { name = "pyarrow" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c6/36/a714b9cf7a4f6bdbf36afd64e201ea9585048fb5daab3e0f59385353b77c/maplib-0.17.12.tar.gz", hash = "sha256:4177b3e814769c4b6f667b9a9fb063183e711bbc6294cc4915d20e77113febd5", size = 429796 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0a/d9/5babb2552842ba687f639b17955c456078d3b041559d5e99258a0a1d8167/maplib-0.17.12-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:60955dc09bcf84d2eef94323cd251dc5a4414488f1b0454ad1a33f1f69738656", size = 21564567 },
+    { url = "https://files.pythonhosted.org/packages/52/eb/ce84d0b4f55f02762ea21117288b95fe99bef94b149ffb08a1272bbc5ef7/maplib-0.17.12-cp39-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:d44abc22cc914bcd74c02bc0a6df5a92b0d1b9354630944c767b33088f330fef", size = 24367671 },
+    { url = "https://files.pythonhosted.org/packages/79/ca/e714c18842736684a3910110cb77d4bb42961bebc29bca31349eb940228c/maplib-0.17.12-cp39-abi3-win_amd64.whl", hash = "sha256:ed837dfba11843dc4e104f1d2c26561902a0d54ebb04e65c52a779e1e5f10845", size = 25612207 },
 ]
 
 [[package]]
@@ -1678,17 +1714,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/a9/9e/57bd2f9fba04a37cef673f9a66b11ca8c43ccdd50d386c455cd4380fe461/rpds_py-0.24.0-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:5f6e3cec44ba05ee5cbdebe92d052f69b63ae792e7d05f1020ac5e964394080c", size = 561771 },
     { url = "https://files.pythonhosted.org/packages/9f/cf/b719120f375ab970d1c297dbf8de1e3c9edd26fe92c0ed7178dd94b45992/rpds_py-0.24.0-cp313-cp313t-win32.whl", hash = "sha256:8ebc7e65ca4b111d928b669713865f021b7773350eeac4a31d3e70144297baba", size = 221195 },
     { url = "https://files.pythonhosted.org/packages/2d/e5/22865285789f3412ad0c3d7ec4dc0a3e86483b794be8a5d9ed5a19390900/rpds_py-0.24.0-cp313-cp313t-win_amd64.whl", hash = "sha256:675269d407a257b8c00a6b58205b72eec8231656506c56fd429d924ca00bb350", size = 237354 },
-]
-
-[[package]]
-name = "ryugraph"
-version = "25.9.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/23/55/6967eb45b88e06b16383e2fa6d381faea8b76038b2a68ea08b3e7f9fd6f5/ryugraph-25.9.0.tar.gz", hash = "sha256:6120845a845578f8f81860d5f39545309dfbb834333315f3d046acff9f313f71", size = 9929996 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/ee/b8/326426222d8a88ee8ca492de427ab8d34ccaa23399a4c0ef26924aa1a692/ryugraph-25.9.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:8c7260cba346663c0f3130c65f068386a8fbb6ab5788815fc89ecf3bac209d72", size = 3780215 },
-    { url = "https://files.pythonhosted.org/packages/da/97/8c862f62694530fe198e69d13720feccf7ef148d909e2653016c860f1566/ryugraph-25.9.0-cp313-cp313-macosx_11_0_x86_64.whl", hash = "sha256:576c147075be09ce42a9560ffee8dd80ea4a2b36de79ae0b68e80d3ec9529cdc", size = 4184586 },
-    { url = "https://files.pythonhosted.org/packages/7e/e8/9e59e3caf3663f4b6d62ad03ebcc7778b4c30c355c2b8ce524d5d57754c9/ryugraph-25.9.0-cp313-cp313-win_amd64.whl", hash = "sha256:95f837a4285839a1514d91ad97d5406e341c129d5c52120905cde50248f742d5", size = 4380708 },
 ]
 
 [[package]]
