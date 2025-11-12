@@ -78,7 +78,7 @@ In your browser, open
 ## Transform data records into dataframes
 
 Transform the source data records from the open datasets into `Polars` dataframes.
-Then serialize these as CSV files for use later.
+Then serialize these dataframes as CSV files for use later.
 
 In JupyterLab open the `2.open_data.ipynb` notebook:
 
@@ -98,9 +98,21 @@ In JupyterLab open the `3.reform.ipynb` notebook:
 .venv/bin/jupyter-lab 3.reform.ipynb
 ```
 
----
+## Graph algorithms
+
+Leverage graph algorithms in `NetworkX`: 
+
+  - partitioning to identify subgraphs as potential fraud rings within the graph
+  - betweenness centrality to rank individuals of interest within each subgraph
 
 
-10. Leverage graph algorithms in `NetworkX`: partitioning to identify subgraphs as potential fraud rings within the graph, and betweenness centrality to rank individuals of interest within each subgraph.
-11. Run visualizations using `yFiles` to examine the [2021 South London Papa Johns tax evasion case](https://www.newsshopper.co.uk/news/19164815.boss-bromley-catford-papa-johns-stores-jailed/)
-12. Q&A discussion.
+## Interactive visualization
+
+In JupyterLab open the `5.kg_vis.ipynb` notebook:
+
+```bash
+.venv/bin/jupyter-lab 5.kg_vis.ipynb
+```
+
+
+## Q&A discussion
