@@ -57,8 +57,9 @@ To get started on constructing our knowledge graph for visualizing
 fraud networks, we need to download the datasets and run _entity
 resolution_ (ER) to merge these. Then generate a _domain-specific
 thesaurus_ from the ER results, used to generate "building blocks" for
-constructing a graph. Launch JupyterLab and run the `1.run_er.ipynb`
-notebook:
+constructing a graph.
+
+Launch JupyterLab and open the `1.run_er.ipynb` notebook:
 
 ```bash
 .venv/bin/jupyter-lab 1.run_er.ipynb
@@ -74,16 +75,32 @@ In your browser, open
 <https://github.com/senzing-garage/sz-semantics/wiki/ns>
 
 
-## Polars dataframes for loading graph elements
+## Transform data records into dataframes
+
+Transform the source data records from the open datasets into `Polars` dataframes.
+Then serialize these as CSV files for use later.
+
+In JupyterLab open the `2.open_data.ipynb` notebook:
+
+```bash
+.venv/bin/jupyter-lab 2.open_data.ipynb
+```
 
 
-We'll use SPARQL queries in `Maplib` to reform the RDF into _property graph_ elements in `Polars` dataframes which can then be loaded into RyuGraph.
+## Reform RDF triples into a property graph
+
+We'll use SPARQL queries in `Maplib` to reform the RDF into _property graph_ elements in `Polars` dataframes.
+Then load nodes and edges from the dataframes into their corresponding tables in the graph database.
+
+In JupyterLab open the `3.reform.ipynb` notebook:
+
+```bash
+.venv/bin/jupyter-lab 3.reform.ipynb
+```
 
 ---
 
 
-8. Also transform records from the datasets into `Polars` dataframes.
-9. Load tables into `RyuGraph` from the dataframes.
 10. Leverage graph algorithms in `NetworkX`: partitioning to identify subgraphs as potential fraud rings within the graph, and betweenness centrality to rank individuals of interest within each subgraph.
 11. Run visualizations using `yFiles` to examine the [2021 South London Papa Johns tax evasion case](https://www.newsshopper.co.uk/news/19164815.boss-bromley-catford-papa-johns-stores-jailed/)
 12. Q&A discussion.
