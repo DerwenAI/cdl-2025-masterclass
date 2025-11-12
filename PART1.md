@@ -62,7 +62,7 @@ constructing a graph.
 Launch `JupyterLab` and open the `1.run_er.ipynb` notebook:
 
 ```bash
-.venv/bin/jupyter-lab 1.run_er.ipynb
+./.venv/bin/jupyter-lab 1.run_er.ipynb
 ```
 
 Let's look through the _metadata application profile_ (MAP) for the
@@ -83,7 +83,7 @@ Then serialize these dataframes as CSV files for use later.
 In `JupyterLab` open the `2.open_data.ipynb` notebook:
 
 ```bash
-.venv/bin/jupyter-lab 2.open_data.ipynb
+./.venv/bin/jupyter-lab 2.open_data.ipynb
 ```
 
 
@@ -95,10 +95,10 @@ Then load nodes and edges from the dataframes into their corresponding tables in
 In `JupyterLab` open the `3.reform.ipynb` notebook:
 
 ```bash
-.venv/bin/jupyter-lab 3.reform.ipynb
+./.venv/bin/jupyter-lab 3.reform.ipynb
 ```
 
-## Graph algorithms
+## Graph analytics
 
 Leverage graph algorithms in `NetworkX`: 
 
@@ -108,7 +108,7 @@ Leverage graph algorithms in `NetworkX`:
 In `JupyterLab` open the `4.analytics.ipynb` notebook:
 
 ```bash
-.venv/bin/jupyter-lab 4.analytics.ipynb
+./.venv/bin/jupyter-lab 4.analytics.ipynb
 ```
 
 
@@ -123,7 +123,7 @@ tax evasion case.
 In `JupyterLab` open the `5.kg_vis.ipynb` notebook:
 
 ```bash
-.venv/bin/jupyter-lab 5.kg_vis.ipynb
+./.venv/bin/jupyter-lab 5.kg_vis.ipynb
 ```
 
 

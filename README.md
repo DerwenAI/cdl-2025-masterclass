@@ -61,18 +61,16 @@ You must have [Docker](https://docs.docker.com/get-docker/),
 and [Python 3.13+](https://www.python.org/downloads/release/python-3139/)
 downloaded and installed to run this tutorial.
 
-Before going to the conference, you need to have downloaded
-**these two containers** onto your laptop:
+Before going to the conference, **download this container** onto your
+laptop:
 
 ```bash
 docker pull senzing/serve-grpc:latest
-docker pull ryugraphdb/explorer:latest
 ```
 
 NB: due to sudden changes for `KùzuDB`, we've had to adjust the
-content of this course: **Prashanth Rao** will not be able to join,
-and we'll use `RyuGraph` and also `NetworkX` instead. The latter can
-be scaled and accelerated using `cuGraph` on NVIDIA GPUs.
+content of this course, and unfortunately **Prashanth Rao** will not
+be able to join.
 
 We will include additional content using `LanceDB` and `DSPy` for
 context engineering, plus a section on "how to become a money launderer"
