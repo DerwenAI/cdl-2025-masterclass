@@ -115,6 +115,7 @@ Tutorial: [PART1 instructions](PART1.md)
   * <https://networkx.org/>
   * <https://jupyter.org/>
   * <https://www.yworks.com/products/yfiles-graphs-for-jupyter>
+  * <https://github.com/yWorks/yfiles-jupyter-graphs-for-kuzu>
 
 ---
 
