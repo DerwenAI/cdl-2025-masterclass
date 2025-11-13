@@ -263,6 +263,7 @@ Kudos to
 [@jbutcher21](https://github.com/jbutcher21),
 [@docktermj](https://github.com/docktermj),
 [@cj2001](https://github.com/cj2001),
+[@louisguitton](https://github.com/louisguitton),
 [@jesstalisman-ia](https://github.com/jesstalisman-ia),
 [@pudo](https://github.com/pudo),
 [@StephenAbbott](https://github.com/StephenAbbott),

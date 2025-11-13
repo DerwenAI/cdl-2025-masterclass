@@ -114,11 +114,13 @@ In `JupyterLab` open the `4.analytics.ipynb` notebook:
 
 ## Interactive visualization
 
-Run visualizations using
+Let's complete the implementation of the **four-step design pattern** for graph analytics in anti-fraud, by running interactive visualizations using
 [`yFiles`](https://www.yworks.com/products/yfiles-graphs-for-jupyter)
 to examine a subgraph about the
 [2021 South London Papa Johns](https://www.newsshopper.co.uk/news/19164815.boss-bromley-catford-papa-johns-stores-jailed/)
 tax evasion case.
+
+We'll develop a theme about leveraging AI applications to "refocus the lens" in complex problems (such as developing prosecutable evidence against criminal networks) to bring them back to human scale, and optimize for collaboration within and across teams.
 
 In `JupyterLab` open the `5.kg_vis.ipynb` notebook:
 
