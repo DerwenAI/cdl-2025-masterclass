@@ -167,16 +167,6 @@ applications.
   * use _semantic expansion_ and _random walks_ so than entity reranking drives text chunk reranking
   * include text definitions for classes in the taxonomy into the reranked text chunks
 
-**Important**: this component is being re-written to make it clearer
-to understand the workflow steps and components used. In particular,
-this tutorial does not yet include some important components which
-would be needed for a more ideal implementation:
-
-  * also use domain context to constrain _relation resolution_
-  * resolving _co-reference_ within the source text
-  * use of _multimodal_ embeddings
-
-Stay tuned for more soon -- _same bat-time, same bat-channel!_
 
 We will this section begin with a brief introduction to the topics
 plus overview of available (albeit less often discussed) technology

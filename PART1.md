@@ -114,19 +114,48 @@ In `JupyterLab` open the `4.analytics.ipynb` notebook:
 
 ## Interactive visualization
 
-Let's complete the implementation of the **four-step design pattern** for graph analytics in anti-fraud, by running interactive visualizations using
+Let's complete the implementation of the **four-step design pattern**
+for graph analytics in anti-fraud, by running interactive
+visualizations using
 [`yFiles`](https://www.yworks.com/products/yfiles-graphs-for-jupyter)
-to examine a subgraph about the
-[2021 South London Papa Johns](https://www.newsshopper.co.uk/news/19164815.boss-bromley-catford-papa-johns-stores-jailed/)
-tax evasion case.
+to examine a subgraph about the 2021 South London Papa Johns
+[tax evasion](https://www.newsshopper.co.uk/news/19164815.boss-bromley-catford-papa-johns-stores-jailed/)
+case.
 
-We'll develop a theme about leveraging AI applications to "refocus the lens" in complex problems (such as developing prosecutable evidence against criminal networks) to bring them back to human scale, and optimize for collaboration within and across teams.
+We'll develop a theme about using AI apps to "refocus the lens" in
+complex problems (such as developing prosecutable evidence against
+criminal networks) to bring them back to **human scale**, optimizing
+for collaboration within and across teams.
 
 In `JupyterLab` open the `5.kg_vis.ipynb` notebook:
 
 ```bash
 ./.venv/bin/jupyter-lab 5.kg_vis.ipynb
 ```
+
+
+## What's missing?
+
+This tutorial could be making so much more use of the semantics from
+FtM, BODS, etc.
+
+Consider the BODS representation of data from UK Companies House,
+and keep in mind the
+[_robust definition principle_](https://www.openownership.org/en/principles/robust-definition/)
+for _beneficial ownership_ and the article
+["Using the UK’s public company and beneficial ownership data to power open source intelligence investigations"](https://stephenabbottpugh.medium.com/using-the-uks-public-company-and-beneficial-ownership-data-to-power-open-source-intelligence-56b06bd02ddb)
+
+  * <https://bods-data.openownership.org/source/uk_version_0_4/>
+  * <https://github.com/openownership/bodsanalysis>
+
+In other words, we're barely scratching the surface of showing how to
+integrate important data sources and leverage semantics for enhancing
+AI apps in anti-fraud and anti-corruption. On the flip side of use
+cases, so many of the techniques shown in this class translates into
+marketing applications, too.
+
+Stay tuned for more soon --
+>same bat-time, same bat-channel!
 
 
 ## Q&A discussion
