@@ -98,7 +98,7 @@ keywords = [
 [project.urls]
 
 homepage = "https://github.com/DerwenAI/cdl-2025-masterclass"
-slides = "https://drive.proton.me/urls/S7352D48GG#eGkDq6kWhLFs"
+slides = "https://derwen.ai/s/nrf8#0"
 conference = "https://2025.connected-data.london/talks/combining-data-from-structured-and-unstructured-sources-to-create-high-quality-knowledge-graphs/"
 
 [dependency-groups]
