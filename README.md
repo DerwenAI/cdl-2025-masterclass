@@ -8,7 +8,7 @@ Thu Nov 20, 2025
 <https://2025.connected-data.london/talks/combining-data-from-structured-and-unstructured-sources-to-create-high-quality-knowledge-graphs/>
 
   * **Paco Nathan** and **Gurpinder Dhillon** @ [Senzing.com](https://senzing.com/)
-  * slides: <https://derwen.ai/s/nrf8#0> or <https://drive.proton.me/urls/S7352D48GG#eGkDq6kWhLFs>
+  * slides: <https://drive.proton.me/urls/S7352D48GG#eGkDq6kWhLFs>
 
 
 ### Overview
