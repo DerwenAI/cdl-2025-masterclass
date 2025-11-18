@@ -163,6 +163,7 @@ dependencies = [
     { name = "pyarrow" },
     { name = "pydantic" },
     { name = "pyvis" },
+    { name = "ryugraph" },
     { name = "seaborn" },
     { name = "sz-semantics" },
     { name = "watermark" },
@@ -190,6 +191,7 @@ requires-dist = [
     { name = "pyarrow", specifier = ">=20.0.0" },
     { name = "pydantic", specifier = ">=2.11.7" },
     { name = "pyvis", specifier = ">=0.3.2" },
+    { name = "ryugraph", specifier = ">=25.9.1" },
     { name = "seaborn", specifier = ">=0.13.2" },
     { name = "sz-semantics", specifier = ">=1.3.3" },
     { name = "watermark", specifier = ">=2.5.0" },
@@ -1712,6 +1714,17 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/a9/9e/57bd2f9fba04a37cef673f9a66b11ca8c43ccdd50d386c455cd4380fe461/rpds_py-0.24.0-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:5f6e3cec44ba05ee5cbdebe92d052f69b63ae792e7d05f1020ac5e964394080c", size = 561771 },
     { url = "https://files.pythonhosted.org/packages/9f/cf/b719120f375ab970d1c297dbf8de1e3c9edd26fe92c0ed7178dd94b45992/rpds_py-0.24.0-cp313-cp313t-win32.whl", hash = "sha256:8ebc7e65ca4b111d928b669713865f021b7773350eeac4a31d3e70144297baba", size = 221195 },
     { url = "https://files.pythonhosted.org/packages/2d/e5/22865285789f3412ad0c3d7ec4dc0a3e86483b794be8a5d9ed5a19390900/rpds_py-0.24.0-cp313-cp313t-win_amd64.whl", hash = "sha256:675269d407a257b8c00a6b58205b72eec8231656506c56fd429d924ca00bb350", size = 237354 },
+]
+
+[[package]]
+name = "ryugraph"
+version = "25.9.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/9e/91/aed05dd314a21699d79591d5a9a445dc14adb8ce509f30c2563618f7ea43/ryugraph-25.9.1.tar.gz", hash = "sha256:63ef65d0652db5cb6da85e8e947395f5045a786a03477524b40afb01a25a9451", size = 9933431 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/de/37/83b26cb7f72d1370b44809d1d9fdb75bdffb8d4f6879901980c0df3193b5/ryugraph-25.9.1-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:40def0a67f74bbd50c2baf6a55ee6de67b4d348e8c40fbdbcd3db67101151f5e", size = 3780966 },
+    { url = "https://files.pythonhosted.org/packages/3a/d7/5ded03ac8ded313a58c58ad03d70f90b0fa0a4b47b6a1e4d4af3e27e0885/ryugraph-25.9.1-cp313-cp313-macosx_11_0_x86_64.whl", hash = "sha256:ff0c15c8567ff63c1161538b5ebec3d829de82a63033c604edf5e8e05e0f7ab9", size = 4185698 },
+    { url = "https://files.pythonhosted.org/packages/f7/80/f3c50a99fff21bf4f64114dd7678be316546642df88d818f011a34cbd885/ryugraph-25.9.1-cp313-cp313-win_amd64.whl", hash = "sha256:dcb5aaaf452b695f52f7bfff9fe7b78dae292e32db71398f8d44cf4b3db1bef0", size = 4382207 },
 ]
 
 [[package]]
