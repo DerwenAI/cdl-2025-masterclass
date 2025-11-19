@@ -151,7 +151,11 @@ version = "1.0.0"
 source = { virtual = "." }
 dependencies = [
     { name = "icecream" },
+    { name = "ipywidgets" },
     { name = "jupyterlab" },
+    { name = "jupyterlab-execute-time" },
+    { name = "kuzu" },
+    { name = "maplib" },
     { name = "matplotlib" },
     { name = "networkx" },
     { name = "numpy" },
@@ -164,6 +168,8 @@ dependencies = [
     { name = "sz-semantics" },
     { name = "watermark" },
     { name = "yfiles-jupyter-graphs" },
+    { name = "yfiles-jupyter-graphs-for-kuzu" },
+    { name = "yfiles-jupyter-graphs-for-ryugraph" },
 ]
 
 [package.dev-dependencies]
@@ -174,7 +180,11 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "icecream", specifier = ">=2.1.4" },
+    { name = "ipywidgets", specifier = ">=8.1.6" },
     { name = "jupyterlab", specifier = ">=4.4.8" },
+    { name = "jupyterlab-execute-time", specifier = ">=3.2.0" },
+    { name = "kuzu", specifier = "==0.9.0" },
+    { name = "maplib", specifier = ">=0.17.12" },
     { name = "matplotlib", specifier = ">=3.10.5" },
     { name = "networkx", specifier = ">=3.4.2" },
     { name = "numpy", specifier = ">=2.3.2" },
@@ -182,11 +192,13 @@ requires-dist = [
     { name = "pyarrow", specifier = ">=20.0.0" },
     { name = "pydantic", specifier = ">=2.11.7" },
     { name = "pyvis", specifier = ">=0.3.2" },
-    { name = "ryugraph", specifier = ">=25.9.0" },
+    { name = "ryugraph", specifier = ">=25.9.1" },
     { name = "seaborn", specifier = ">=0.13.2" },
-    { name = "sz-semantics", specifier = ">=1.3.1" },
+    { name = "sz-semantics", specifier = ">=1.3.3" },
     { name = "watermark", specifier = ">=2.5.0" },
     { name = "yfiles-jupyter-graphs", specifier = ">=1.10.5" },
+    { name = "yfiles-jupyter-graphs-for-kuzu", specifier = "==0.0.4" },
+    { name = "yfiles-jupyter-graphs-for-ryugraph", git = "https://github.com/predictable-labs/yfiles-jupyter-graphs-for-ryugraph.git" },
 ]
 
 [package.metadata.requires-dev]
@@ -813,6 +825,18 @@ wheels = [
 ]
 
 [[package]]
+name = "jupyterlab-execute-time"
+version = "3.2.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "jupyterlab" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ee/e5/245bf4ebc553c5a4e616fdeb0ea285549174135e72b05479f7bb91a4e6ed/jupyterlab_execute_time-3.2.0.tar.gz", hash = "sha256:9b13b65c2c139bfabb3f6ff1706c4d33ed5a56203a89d0297608334e15bc9c0b", size = 340467 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ce/74/f47c4411b280175938c5f1ee3f8f98a0a75c83aa6e992c1616621b238ac0/jupyterlab_execute_time-3.2.0-py3-none-any.whl", hash = "sha256:a0be3fe740fa59b59b16047793e5a0831cc497906863d26b83d3b92525dcb7ed", size = 527063 },
+]
+
+[[package]]
 name = "jupyterlab-pygments"
 version = "0.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -905,6 +929,36 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/99/dd/841e9a66c4715477ea0abc78da039832fbb09dac5c35c58dc4c41a407b8a/kiwisolver-1.4.9-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:aedff62918805fb62d43a4aa2ecd4482c380dc76cd31bd7c8878588a61bd0369", size = 2391835 },
     { url = "https://files.pythonhosted.org/packages/0c/28/4b2e5c47a0da96896fdfdb006340ade064afa1e63675d01ea5ac222b6d52/kiwisolver-1.4.9-cp314-cp314t-win_amd64.whl", hash = "sha256:1fa333e8b2ce4d9660f2cda9c0e1b6bafcfb2457a9d259faa82289e73ec24891", size = 79988 },
     { url = "https://files.pythonhosted.org/packages/80/be/3578e8afd18c88cdf9cb4cffde75a96d2be38c5a903f1ed0ceec061bd09e/kiwisolver-1.4.9-cp314-cp314t-win_arm64.whl", hash = "sha256:4a48a2ce79d65d363597ef7b567ce3d14d68783d2b2263d98db3d9477805ba32", size = 70260 },
+]
+
+[[package]]
+name = "kuzu"
+version = "0.9.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/63/72/d7f009f3d46bccd853749a6a6845be0c1ecc3607d39e28862d104ce119f8/kuzu-0.9.0.tar.gz", hash = "sha256:2e59f3d4d1fc385e9e90d7ae09f072ec2f4cfeff508582523a0034ceb076f6eb", size = 4839346 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/51/3e/73d6c92ee872182de2602c53379667b976e4140e173e8541b37ac198fbdd/kuzu-0.9.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:ec2e709599b4015d0a179a191dd7850e7bf076f83b37b70d0dc2e4ee59ce7725", size = 3669449 },
+    { url = "https://files.pythonhosted.org/packages/85/d7/3e2a7b8b39ea2fbe11e6c3567e08927823c42e7cc6c426464bd71cac29ac/kuzu-0.9.0-cp313-cp313-macosx_11_0_x86_64.whl", hash = "sha256:8aad4fbd74b283ffb0b115138dfc62d9775c8f19ba62ab243e55e3cd648652b6", size = 4127321 },
+    { url = "https://files.pythonhosted.org/packages/ac/e5/630d77dd49d9f2f5d1e35c3fd47ce75574ebfdd9081e7f56cbae35814b75/kuzu-0.9.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:ba9dd4f412e31d34345b6461fc9489955ae9566abf426e56af478b6e791b735a", size = 6083958 },
+    { url = "https://files.pythonhosted.org/packages/b0/a2/27462033d07e87eaf11c65073515a5eaad139a74af483d117dfce350c48f/kuzu-0.9.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:340502cbce54f21a5b2440a75c28d61ddfd26d6d6848e9daa6140798bdd5b367", size = 6878543 },
+    { url = "https://files.pythonhosted.org/packages/af/4a/ebe459433bd4e9ae900531359756ec5d2ad1ba35c6e4053069c0bfa8545c/kuzu-0.9.0-cp313-cp313-win_amd64.whl", hash = "sha256:e1ddb189dfa2aee0123dcd1a5ccc5b831a7f297233a09fccfd76294fc2f9e6bd", size = 4176144 },
+    { url = "https://files.pythonhosted.org/packages/0b/34/67016765830540f64288dbaed662465daef03fbacd69026b324b33e8a7f1/kuzu-0.9.0-cp313-cp313t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:1fae68db87ba48268228c89e70ed1fde2f43843d8ed6b2debaafd314c45e8542", size = 6090336 },
+    { url = "https://files.pythonhosted.org/packages/52/d5/0a67f8994b7ecb2d7b0d6902dd78b0516f0d549db83a23f80baebee3117b/kuzu-0.9.0-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:a0279ba37c639d96f303eb6ad4481e634495be31210991d8008c385ee50b4e0a", size = 6881186 },
+]
+
+[[package]]
+name = "maplib"
+version = "0.17.12"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "polars" },
+    { name = "pyarrow" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c6/36/a714b9cf7a4f6bdbf36afd64e201ea9585048fb5daab3e0f59385353b77c/maplib-0.17.12.tar.gz", hash = "sha256:4177b3e814769c4b6f667b9a9fb063183e711bbc6294cc4915d20e77113febd5", size = 429796 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0a/d9/5babb2552842ba687f639b17955c456078d3b041559d5e99258a0a1d8167/maplib-0.17.12-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:60955dc09bcf84d2eef94323cd251dc5a4414488f1b0454ad1a33f1f69738656", size = 21564567 },
+    { url = "https://files.pythonhosted.org/packages/52/eb/ce84d0b4f55f02762ea21117288b95fe99bef94b149ffb08a1272bbc5ef7/maplib-0.17.12-cp39-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:d44abc22cc914bcd74c02bc0a6df5a92b0d1b9354630944c767b33088f330fef", size = 24367671 },
+    { url = "https://files.pythonhosted.org/packages/79/ca/e714c18842736684a3910110cb77d4bb42961bebc29bca31349eb940228c/maplib-0.17.12-cp39-abi3-win_amd64.whl", hash = "sha256:ed837dfba11843dc4e104f1d2c26561902a0d54ebb04e65c52a779e1e5f10845", size = 25612207 },
 ]
 
 [[package]]
@@ -1666,13 +1720,13 @@ wheels = [
 
 [[package]]
 name = "ryugraph"
-version = "25.9.0"
+version = "25.9.1"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/23/55/6967eb45b88e06b16383e2fa6d381faea8b76038b2a68ea08b3e7f9fd6f5/ryugraph-25.9.0.tar.gz", hash = "sha256:6120845a845578f8f81860d5f39545309dfbb834333315f3d046acff9f313f71", size = 9929996 }
+sdist = { url = "https://files.pythonhosted.org/packages/9e/91/aed05dd314a21699d79591d5a9a445dc14adb8ce509f30c2563618f7ea43/ryugraph-25.9.1.tar.gz", hash = "sha256:63ef65d0652db5cb6da85e8e947395f5045a786a03477524b40afb01a25a9451", size = 9933431 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ee/b8/326426222d8a88ee8ca492de427ab8d34ccaa23399a4c0ef26924aa1a692/ryugraph-25.9.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:8c7260cba346663c0f3130c65f068386a8fbb6ab5788815fc89ecf3bac209d72", size = 3780215 },
-    { url = "https://files.pythonhosted.org/packages/da/97/8c862f62694530fe198e69d13720feccf7ef148d909e2653016c860f1566/ryugraph-25.9.0-cp313-cp313-macosx_11_0_x86_64.whl", hash = "sha256:576c147075be09ce42a9560ffee8dd80ea4a2b36de79ae0b68e80d3ec9529cdc", size = 4184586 },
-    { url = "https://files.pythonhosted.org/packages/7e/e8/9e59e3caf3663f4b6d62ad03ebcc7778b4c30c355c2b8ce524d5d57754c9/ryugraph-25.9.0-cp313-cp313-win_amd64.whl", hash = "sha256:95f837a4285839a1514d91ad97d5406e341c129d5c52120905cde50248f742d5", size = 4380708 },
+    { url = "https://files.pythonhosted.org/packages/de/37/83b26cb7f72d1370b44809d1d9fdb75bdffb8d4f6879901980c0df3193b5/ryugraph-25.9.1-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:40def0a67f74bbd50c2baf6a55ee6de67b4d348e8c40fbdbcd3db67101151f5e", size = 3780966 },
+    { url = "https://files.pythonhosted.org/packages/3a/d7/5ded03ac8ded313a58c58ad03d70f90b0fa0a4b47b6a1e4d4af3e27e0885/ryugraph-25.9.1-cp313-cp313-macosx_11_0_x86_64.whl", hash = "sha256:ff0c15c8567ff63c1161538b5ebec3d829de82a63033c604edf5e8e05e0f7ab9", size = 4185698 },
+    { url = "https://files.pythonhosted.org/packages/f7/80/f3c50a99fff21bf4f64114dd7678be316546642df88d818f011a34cbd885/ryugraph-25.9.1-cp313-cp313-win_amd64.whl", hash = "sha256:dcb5aaaf452b695f52f7bfff9fe7b78dae292e32db71398f8d44cf4b3db1bef0", size = 4382207 },
 ]
 
 [[package]]
@@ -1787,15 +1841,15 @@ wheels = [
 
 [[package]]
 name = "sz-semantics"
-version = "1.3.1"
+version = "1.3.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "rdflib" },
     { name = "senzing-grpc" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/94/fe/e7c182dc53d22ceb98c4ad3e489398cec1b0e844898c9eca1a6355e0d807/sz_semantics-1.3.1.tar.gz", hash = "sha256:310d4fc5951d15eb9294a9cce06721e335598d2e18fe57e080dbef92530d8497", size = 13169 }
+sdist = { url = "https://files.pythonhosted.org/packages/70/13/0d10a64b5ea9f310dcaea0af195f6cbea1f9fed0b825235a540b118547ce/sz_semantics-1.3.3.tar.gz", hash = "sha256:c1e628e2e9eb0d4e6042ab3d150ed64b7ef594d365ca3486ba060505d87b6419", size = 13313 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/14/b9/4b9ffbe6ba591688573e1df25282b0107432ccce6e9ea44c2f1bfbc154d4/sz_semantics-1.3.1-py3-none-any.whl", hash = "sha256:0f66e39855b307e0ecdaaed5f3b30d4b834c555dc6f71ab162f38c59ef8d8c89", size = 13810 },
+    { url = "https://files.pythonhosted.org/packages/53/82/6578fc99d0e9b34eefa1ab54b2a57a2bc10b8c57d59a2bde7818ba275dcc/sz_semantics-1.3.3-py3-none-any.whl", hash = "sha256:3878150635075a8ff483db938224dd7e010ac4d4cdfc3471caa4a4c1dfaf7c61", size = 13892 },
 ]
 
 [[package]]
@@ -1969,14 +2023,34 @@ wheels = [
 
 [[package]]
 name = "yfiles-jupyter-graphs"
-version = "1.10.5"
+version = "1.10.9"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ipywidgets" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/33/2a/f74a5b73d1a81c3907700f345eeb1c194c54e7e34d3e6069724c30b566e3/yfiles_jupyter_graphs-1.10.5.tar.gz", hash = "sha256:15d4355e02c1783c556e55b9c2565d92853d1408dad70f11c056e173f458c3c7", size = 10694733 }
+sdist = { url = "https://files.pythonhosted.org/packages/6d/40/2295a89ea209a095ae8e39704aeea181856fd085f0ffce8054bcbf19aa9a/yfiles_jupyter_graphs-1.10.9.tar.gz", hash = "sha256:aeb7c93c9b42c7d21505d88509d6996e8f2a7ae413bd8a91cb8372aef0d694a1", size = 10710601 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/23/a0/0af28cb6c66779f070b070ce0b7a379127d290ad267504faa5c5aa66cb22/yfiles_jupyter_graphs-1.10.5-py3-none-any.whl", hash = "sha256:02fe6b37140ccec1a167e4fe996b889c8938a0de835deb90b25ea48523a17e20", size = 15685775 },
+    { url = "https://files.pythonhosted.org/packages/f1/e1/516f6b747fb41b9ce94c699ffb92c03236967588d2944462c185f1314af3/yfiles_jupyter_graphs-1.10.9-py3-none-any.whl", hash = "sha256:315b3bd5f5b57b8557447dd1c48637ebe5f049c67b6e12600928e76514fc4d63", size = 15709593 },
+]
+
+[[package]]
+name = "yfiles-jupyter-graphs-for-kuzu"
+version = "0.0.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "yfiles-jupyter-graphs" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/2a/32/aa9941a4c2ac935cd66f7a8bb3eeb5c7b1d3f097a6f1fbfc359c4a18815c/yfiles_jupyter_graphs_for_kuzu-0.0.4.tar.gz", hash = "sha256:fd03f42b902587398dbd65bc17aa4ff94f7a856748274e83d5001a5b10f9db87", size = 16521 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/45/5d/5c8d30d08e74b25806eba8f8db560377109e701ffc0bdcb44c4b4bea4d46/yfiles_jupyter_graphs_for_kuzu-0.0.4-py3-none-any.whl", hash = "sha256:2853b39d50b072f964fb03b84c1ff8d0b14f5360d7a4792c9d2f09dedbf6708b", size = 13941 },
+]
+
+[[package]]
+name = "yfiles-jupyter-graphs-for-ryugraph"
+version = "1.1.1"
+source = { git = "https://github.com/predictable-labs/yfiles-jupyter-graphs-for-ryugraph.git#7a60a15283500801d3b7adb8113948ed02e723aa" }
+dependencies = [
+    { name = "yfiles-jupyter-graphs" },
 ]
 
 [[package]]

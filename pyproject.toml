@@ -13,35 +13,44 @@ authors = [
 
 requires-python = ">=3.13"
 dependencies = [
+    # to Ryu/Kuzu or not to Ryu/Kuzu, c'est la question à laquelle
+    "ryugraph>=25.9.1",
+    "kuzu==0.9.0",
+    "yfiles-jupyter-graphs-for-kuzu==0.0.4",
+    #
     # graph technologies
-    "ryugraph>=25.9.0",
+    "sz-semantics>=1.3.3",
+    "maplib>=0.17.12",
     "networkx>=3.4.2",
-    "sz-semantics>=1.3.1",
-
+    #
     # Python "nuts and bolts"
     "numpy>=2.3.2",
-    "pydantic>=2.11.7",
     "polars>=1.29.0",
+    "pydantic>=2.11.7",
     "pyarrow>=20.0.0",
-
+    #
     # visualizations
-    "matplotlib>=3.10.5",
-    "seaborn>=0.13.2",
-    "pyvis>=0.3.2",
     "yfiles-jupyter-graphs>=1.10.5",
-
+    "matplotlib>=3.10.5",
+    "pyvis>=0.3.2",
+    "seaborn>=0.13.2",
+    #
     # notebook demos
+    "ipywidgets>=8.1.6",
     "jupyterlab>=4.4.8",
+    "jupyterlab-execute-time>=3.2.0",
     "watermark>=2.5.0",
-
+    #
     # instrumentation, observability
     "icecream>=2.1.4",
+    "yfiles-jupyter-graphs-for-ryugraph",
 ]
 
 classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Operating System :: OS Independent",
     "License :: OSI Approved :: MIT License",
     "Development Status :: 5 - Production/Stable",
@@ -67,6 +76,7 @@ keywords = [
     "graph algorithms",
     "graph visualization",
     "graphrag",
+    "human scale",
     "knowledge graph",
     "leaked data",
     "money laundering",
@@ -89,11 +99,14 @@ keywords = [
 [project.urls]
 
 homepage = "https://github.com/DerwenAI/cdl-2025-masterclass"
-slides = "https://drive.proton.me/urls/S7352D48GG#eGkDq6kWhLFs"
+slides = "https://derwen.ai/s/nrf8#0"
 conference = "https://2025.connected-data.london/talks/combining-data-from-structured-and-unstructured-sources-to-create-high-quality-knowledge-graphs/"
 
 [dependency-groups]
 dev = [
     "ipykernel>=6.29.5",
 ]
+
+[tool.uv.sources]
+yfiles-jupyter-graphs-for-ryugraph = { git = "https://github.com/predictable-labs/yfiles-jupyter-graphs-for-ryugraph.git" }
 

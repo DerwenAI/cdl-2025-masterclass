@@ -30,7 +30,7 @@ governance, better customer experiences, and accelerated innovation.
 
 A tutorial in three parts:
 
-  1. **Part 1**: Visualize fraud networks, using `Senzing`, `OpenSanctions`, `Open Ownership`, `Maplib`, `RyuGraph`, `yWorks`
+  1. **Part 1**: Visualize fraud networks, using `Senzing`, `OpenSanctions`, `Open Ownership`, `Polars`, `Maplib`, `NetworkX`, `yWorks`
   2. **Part 2**: Entity embeddings in graphs: blend structured + unstructured data, using `Senzing`, `LanceDB`, `RDFlib`, `NetworkX`, `DSPy`, `Ollama`
   3. **Part 3**: How to become a money launderer
 
@@ -56,22 +56,21 @@ applications.
   * Familiarity with popular packages such as Jupyter and Docker
 
 **Important:**
-You must have both [Docker](https://docs.docker.com/get-docker/)
+You must have [Docker](https://docs.docker.com/get-docker/),
+[Git](https://git-scm.com/install/),
 and [Python 3.13+](https://www.python.org/downloads/release/python-3139/)
 downloaded and installed to run this tutorial.
 
-Before going to the conference, you need to have downloaded
-**these two containers** onto your laptop:
+Before going to the conference, **download this container** onto your
+laptop:
 
 ```bash
 docker pull senzing/serve-grpc:latest
-docker pull ryugraphdb/explorer:latest
 ```
 
 NB: due to sudden changes for `KùzuDB`, we've had to adjust the
-content of this course: **Prashanth Rao** will not be able to join,
-and we'll use `RyuGraph` and also `NetworkX` instead. The latter can
-be scaled and accelerated using `cuGraph` on NVIDIA GPUs.
+content of this course, and unfortunately **Prashanth Rao** will not
+be able to join.
 
 We will include additional content using `LanceDB` and `DSPy` for
 context engineering, plus a section on "how to become a money launderer"
@@ -90,17 +89,17 @@ We'll start with a brief intro lecture covering the background for
 leveraging these technologies together with open data in an anti-fraud
 use cases.
 
-1. Download the Docker containers for `Senzing` gRPC server and `RyuGraph` Explorer (during the intro)
-2. Initialize the Python environment on your laptop using `uv` to load the library dependencies.
-3. Download slices of datasets from `OpenSanctions` and `Open Ownership`.
-4. Launch the `Senzing` container and run it in the background for a gRPC server.
+1. Download the Docker container for `Senzing` gRPC server (during the intro)
+2. Launch the `Senzing` container and run it in the background for a gRPC server.
+3. Initialize the Python environment on your laptop using `uv` to load the library dependencies.
+4. Download slices of the `OpenSanctions` and `Open Ownership` datasets.
 5. Run _entity resolution_ in `Senzing` to merge the datasets and generate graph "building blocks" in RDF, as a domain-specific thesaurus.
 6. Review the _metadata application profile_ (MAP) for the SKOS taxonomy used, how it integrates with [NIEM](https://niem.github.io/), [FollowTheMoney](https://followthemoney.tech/), [BODS](https://bods-data.openownership.org/), and so on.
-7. Use SPARQL queries in `Maplib` to transform the RDF into `Polars` dataframes.
-8. Also transform records from the datasets into `Polars` dataframes.
-9. Load tables into `RyuGraph` from the dataframes.
+7. Also transform records from the datasets into `Polars` dataframes.
+8. Use SPARQL queries in `Maplib` to transform the RDF into `Polars` dataframes.
+9. Load tables into a graph database from the dataframes.
 10. Leverage graph algorithms in `NetworkX`: partitioning to identify subgraphs as potential fraud rings within the graph, and betweenness centrality to rank individuals of interest within each subgraph.
-11. Run visualizations using `yFiles` to examine the [2021 South London Papa Johns tax evasion case](https://www.newsshopper.co.uk/news/19164815.boss-bromley-catford-papa-johns-stores-jailed/)
+11. Run visualizations using `yFiles` to examine the [2021 South London Papa Johns](https://www.newsshopper.co.uk/news/19164815.boss-bromley-catford-papa-johns-stores-jailed/) tax evasion case.
 12. Q&A discussion.
 
 Tutorial: [PART1 instructions](PART1.md)
@@ -111,12 +110,12 @@ Tutorial: [PART1 instructions](PART1.md)
   * <https://github.com/senzing-garage/serve-grpc>
   * <https://www.opensanctions.org/>
   * <https://www.openownership.org/>
-  * <https://ryugraph.io/>
   * <https://github.com/DataTreehouse/maplib>
   * <https://pola.rs/>
   * <https://networkx.org/>
-  * <https://github.com/rapidsai/nx-cugraph>
-  * <https://github.com/yWorks/yfiles-jupyter-graphs>
+  * <https://jupyter.org/>
+  * <https://www.yworks.com/products/yfiles-graphs-for-jupyter>
+  * <https://github.com/yWorks/yfiles-jupyter-graphs-for-kuzu>
 
 ---
 
@@ -168,16 +167,6 @@ applications.
   * use _semantic expansion_ and _random walks_ so than entity reranking drives text chunk reranking
   * include text definitions for classes in the taxonomy into the reranked text chunks
 
-**Important**: this component is being re-written to make it clearer
-to understand the workflow steps and components used. In particular,
-this tutorial does not yet include some important components which
-would be needed for a more ideal implementation:
-
-  * also use domain context to constrain _relation resolution_
-  * resolving _co-reference_ within the source text
-  * use of _multimodal_ embeddings
-
-Stay tuned for more soon -- _same bat-time, same bat-channel!_
 
 We will this section begin with a brief introduction to the topics
 plus overview of available (albeit less often discussed) technology
@@ -253,6 +242,8 @@ Tutorial: [PART3 instructions](PART3.md)
   * <https://seaborn.pydata.org/>
   * <https://matplotlib.org/>
   * <https://youtu.be/Gtp7U0iq-2I?feature=shared>
+  * <https://jupyter.org/>
+
 
 ---
 
@@ -262,6 +253,7 @@ Kudos to
 [@jbutcher21](https://github.com/jbutcher21),
 [@docktermj](https://github.com/docktermj),
 [@cj2001](https://github.com/cj2001),
+[@louisguitton](https://github.com/louisguitton),
 [@jesstalisman-ia](https://github.com/jesstalisman-ia),
 [@pudo](https://github.com/pudo),
 [@StephenAbbott](https://github.com/StephenAbbott),
