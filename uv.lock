@@ -169,6 +169,7 @@ dependencies = [
     { name = "watermark" },
     { name = "yfiles-jupyter-graphs" },
     { name = "yfiles-jupyter-graphs-for-kuzu" },
+    { name = "yfiles-jupyter-graphs-for-ryugraph" },
 ]
 
 [package.dev-dependencies]
@@ -197,6 +198,7 @@ requires-dist = [
     { name = "watermark", specifier = ">=2.5.0" },
     { name = "yfiles-jupyter-graphs", specifier = ">=1.10.5" },
     { name = "yfiles-jupyter-graphs-for-kuzu", specifier = "==0.0.4" },
+    { name = "yfiles-jupyter-graphs-for-ryugraph", git = "https://github.com/predictable-labs/yfiles-jupyter-graphs-for-ryugraph.git" },
 ]
 
 [package.metadata.requires-dev]
@@ -2021,14 +2023,14 @@ wheels = [
 
 [[package]]
 name = "yfiles-jupyter-graphs"
-version = "1.10.5"
+version = "1.10.9"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ipywidgets" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/33/2a/f74a5b73d1a81c3907700f345eeb1c194c54e7e34d3e6069724c30b566e3/yfiles_jupyter_graphs-1.10.5.tar.gz", hash = "sha256:15d4355e02c1783c556e55b9c2565d92853d1408dad70f11c056e173f458c3c7", size = 10694733 }
+sdist = { url = "https://files.pythonhosted.org/packages/6d/40/2295a89ea209a095ae8e39704aeea181856fd085f0ffce8054bcbf19aa9a/yfiles_jupyter_graphs-1.10.9.tar.gz", hash = "sha256:aeb7c93c9b42c7d21505d88509d6996e8f2a7ae413bd8a91cb8372aef0d694a1", size = 10710601 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/23/a0/0af28cb6c66779f070b070ce0b7a379127d290ad267504faa5c5aa66cb22/yfiles_jupyter_graphs-1.10.5-py3-none-any.whl", hash = "sha256:02fe6b37140ccec1a167e4fe996b889c8938a0de835deb90b25ea48523a17e20", size = 15685775 },
+    { url = "https://files.pythonhosted.org/packages/f1/e1/516f6b747fb41b9ce94c699ffb92c03236967588d2944462c185f1314af3/yfiles_jupyter_graphs-1.10.9-py3-none-any.whl", hash = "sha256:315b3bd5f5b57b8557447dd1c48637ebe5f049c67b6e12600928e76514fc4d63", size = 15709593 },
 ]
 
 [[package]]
@@ -2041,6 +2043,14 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/2a/32/aa9941a4c2ac935cd66f7a8bb3eeb5c7b1d3f097a6f1fbfc359c4a18815c/yfiles_jupyter_graphs_for_kuzu-0.0.4.tar.gz", hash = "sha256:fd03f42b902587398dbd65bc17aa4ff94f7a856748274e83d5001a5b10f9db87", size = 16521 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/45/5d/5c8d30d08e74b25806eba8f8db560377109e701ffc0bdcb44c4b4bea4d46/yfiles_jupyter_graphs_for_kuzu-0.0.4-py3-none-any.whl", hash = "sha256:2853b39d50b072f964fb03b84c1ff8d0b14f5360d7a4792c9d2f09dedbf6708b", size = 13941 },
+]
+
+[[package]]
+name = "yfiles-jupyter-graphs-for-ryugraph"
+version = "1.1.1"
+source = { git = "https://github.com/predictable-labs/yfiles-jupyter-graphs-for-ryugraph.git#7a60a15283500801d3b7adb8113948ed02e723aa" }
+dependencies = [
+    { name = "yfiles-jupyter-graphs" },
 ]
 
 [[package]]

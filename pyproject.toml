@@ -43,6 +43,7 @@ dependencies = [
     #
     # instrumentation, observability
     "icecream>=2.1.4",
+    "yfiles-jupyter-graphs-for-ryugraph",
 ]
 
 classifiers = [
@@ -105,4 +106,7 @@ conference = "https://2025.connected-data.london/talks/combining-data-from-struc
 dev = [
     "ipykernel>=6.29.5",
 ]
+
+[tool.uv.sources]
+yfiles-jupyter-graphs-for-ryugraph = { git = "https://github.com/predictable-labs/yfiles-jupyter-graphs-for-ryugraph.git" }
 
