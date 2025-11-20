@@ -12,7 +12,7 @@ First and foremost, use `Git` to clone the GitHub repository for this
 course onto your laptop, then connect into that directory:
 
 ```bash
-git clone https://github.com/kuzudb/cdl-2025-masterclass.git
+git clone https://github.com/DerwenAI/cdl-2025-masterclass.git
 cd cdl-2025-masterclass
 ```
 

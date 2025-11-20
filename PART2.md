@@ -5,7 +5,8 @@ _Combining Data from Structured and Unstructured Sources to create High-Quality 
 
 ## Part 2:
  
-**to be released on the day of the course**
+We'll be reviewing demo of <https://github.com/DerwenAI/strwythura>
+and walking through the code.
 
 
 ## What's missing?
